@@ -82,7 +82,7 @@ export function EducationSection() {
         {/* Resume download */}
         <div className="mt-10 flex justify-center">
           <Button size="lg" asChild>
-            <a href="/resume.pdf" download aria-label="Download resume as PDF">
+            <a href="/Sameeksha-Mahesh-Resume.pdf" download aria-label="Download resume as PDF">
               <Download className="size-4" />
               Download Resume
             </a>

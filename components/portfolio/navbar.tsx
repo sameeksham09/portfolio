@@ -4,13 +4,14 @@ import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X, Sun, Moon, Home } from "lucide-react";
 
 const navLinks = [
+  { label: "Home", href: "#hero" },
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
   { label: "Experience", href: "#experience" },
+  { label: "Projects", href: "#projects" },
   { label: "Education", href: "#education" },
   { label: "Contact", href: "#contact" },
 ];
@@ -54,8 +55,9 @@ export function Navbar() {
       <nav className="mx-auto max-w-6xl flex items-center justify-between px-6 h-16">
         <a
           href="#hero"
-          className="text-lg font-semibold tracking-tight text-foreground hover:text-primary transition-colors"
+          className="flex items-center gap-2 text-lg font-semibold tracking-tight text-foreground hover:text-primary transition-colors"
         >
+          <Home className="size-4" />
           {"SM"}
         </a>
 

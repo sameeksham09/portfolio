@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Mail } from "lucide-react";
+import { ArrowDown, Mail, Download } from "lucide-react";
 
 export function HeroSection() {
   return (
@@ -37,6 +37,12 @@ export function HeroSection() {
               <a href="#contact">
                 <Mail className="size-4" />
                 Contact Me
+              </a>
+            </Button>
+            <Button variant="ghost" size="lg" asChild>
+              <a href="/Sameeksha-Mahesh-Resume.pdf" download>
+                <Download className="size-4" />
+                Resume
               </a>
             </Button>
           </div>

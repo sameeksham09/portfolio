@@ -1,0 +1,55 @@
+
+
+SAMEEKSHA MAHESH
++1 (530)-760-0509|sammahesh@ucdavis.edu|linkedin.com/in/sameeksham09|github.com/sameeksham09
+SUMMARY
+Computer Science master's student at UC Davis (4.0 GPA) seeking Summer 2026 internship opportunities. Built production systems as 
+SDE at Perfios, reducing API response times by 20% and improving OCR accuracy by 35%. Experienced in Java, Python, Spring Boot, 
+AWS, and Docker with proven ability to deliver end-to-end solutions in fast-paced, cross-functional environments.
+EDUCATION
+University of California, DavisMar 2027
+Master of Science in Computer Science
+• GPA: 4.0/4.0
+• Coursework: Distributed Database Systems, Analysis of Software Artifacts
+Dayanand Sagar College of Engineering2024
+Bachelor of Engineering in Computer Science
+• GPA: 3.97/4.0
+• Coursework: Data Structures and Algorithms, Operating System, Big Data, Cloud Computing, Object Oriented Programming
+TECHNICAL SKILLS
+• Languages: Python, Java, SQL, JavaScript, Go, Perl
+• Frameworks & Libraries: Spring Boot, Flask, Node.js, Rest APIs, Elasticsearch, Microservices
+• Developer Tools: Git, Docker, Kubernetes, Jenkins, GitHub Actions, Postman, Linux
+• Databases: MySQL, PostgreSQL, MongoDB, Oracle
+• Cloud / DevOps: AWS ( EC2, Lambda, EBS, S3), CI/CD pipeline
+EXPERIENCE
+Perfios Software Solutions Pvt LtdApr 2024 - Sep 2025
+Software Development Engineer
+• Redesigned RESTful microservices in Java and Spring Boot using object-oriented design principles, optimizing database queries and 
+indexing to cut API response time by 20% and improve system maintainability.
+• Created a full-stack invoicing platform with Node JS and role-based access control (RBAC), conducting experiment design to validate 
+reporting metrics and partnering cross-functionally to accelerate data-driven decision making.
+• Delivered an OCR-based bank identification system for international banks, improving first-attempt recognition accuracy by 35%.
+• Containerized and deployed services using Docker and established CI/CD pipelines via GitHub Actions and Jenkins, improving 
+deployment reliability and reducing release cycles.
+Brane Enterprises Pvt. LtdJun 2022 - Jan 2023
+Automation Intern
+• Automated API workflows using Postman and integrated them into the CI/CD pipeline, applying experiment design and data analysis 
+to increase reliability and reduce manual testing effort by 15%.
+• Optimized client-facing automation tools in Node JS, working autonomously under Agile timelines and using Git for version control 
+to improve platform performance.
+PROJECTS
+Intelligent Traffic Violation Detection SystemMar 2024 - Jun 2024
+• Created a real-time traffic violation detection system for helmet non-compliance, signal violations, and mobile phone usage using 
+deep learning and computer vision (YOLOv3/v5/v8 + SORT).
+• Integrated Tesseract OCR for automatic license plate recognition and built a Streamlit web interface enabling video upload, real-time 
+violation visualization, and MySQL-based record storage.
+• Achieved 73% mAP50 on validation datasets, enabling accurate and efficient monitoring of traffic violations.
+Secure Healthcare PortalOct 2023 - Feb 2024
+• Engineered a secure, cloud-based telemedicine platform for encrypted storage and sharing of medical records between patients and 
+doctors, ensuring confidentiality, integrity, and reliable access.
+• Implemented RSA-2048 encryption, secure key management, and two-factor authentication via Flask REST APIs, achieving 100% 
+data confidentiality in security testing across 500+ transactions.
+Fake News Detection SystemFeb 2023 - May 2023
+• Built a fake news detection system using NLP and ensemble ML models (Logistic Regression, SVM, Random Forest) with a text 
+preprocessing pipeline (tokenization, TF-IDF vectorization), achieving 96% classification accuracy.
+• Deployed an interactive Flask web interface for real-time article submission and credibility scoring with confidence metrics.
