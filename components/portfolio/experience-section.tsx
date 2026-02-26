@@ -76,13 +76,14 @@ function TimelineCard({ exp, index }: { exp: Experience; index: number }) {
           observer.unobserve(el);
         }
       },
-      { threshold: 0.2, rootMargin: "0px 0px -60px 0px" }
+      { threshold: 0.15, rootMargin: "0px 0px -80px 0px" }
     );
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
 
   const isLeft = index % 2 === 0;
+  const baseDelay = index * 250;
 
   return (
     <div ref={cardRef} className="relative flex items-center">
@@ -90,21 +91,28 @@ function TimelineCard({ exp, index }: { exp: Experience; index: number }) {
       <div className="hidden md:flex w-[calc(50%-28px)] justify-end">
         {isLeft ? (
           <div
-            className={`transition-all duration-700 ease-out ${
-              visible
-                ? "opacity-100 translate-x-0"
-                : "opacity-0 -translate-x-12"
-            }`}
-            style={{ transitionDelay: `${index * 200 + 100}ms` }}
+            className="transition-all ease-[cubic-bezier(0.16,1,0.3,1)]"
+            style={{
+              transitionDuration: "900ms",
+              transitionDelay: `${baseDelay + 150}ms`,
+              opacity: visible ? 1 : 0,
+              transform: visible
+                ? "translateX(0) scale(1)"
+                : "translateX(-60px) scale(0.95)",
+              filter: visible ? "blur(0px)" : "blur(6px)",
+            }}
           >
-            <CardContent exp={exp} alignment="right" />
+            <CardContent exp={exp} alignment="right" visible={visible} baseDelay={baseDelay} />
           </div>
         ) : (
           <div
-            className={`flex items-center justify-end transition-all duration-500 ease-out ${
-              visible ? "opacity-100" : "opacity-0"
-            }`}
-            style={{ transitionDelay: `${index * 200 + 300}ms` }}
+            className="flex items-center justify-end transition-all ease-[cubic-bezier(0.16,1,0.3,1)]"
+            style={{
+              transitionDuration: "700ms",
+              transitionDelay: `${baseDelay + 400}ms`,
+              opacity: visible ? 1 : 0,
+              transform: visible ? "translateY(0)" : "translateY(12px)",
+            }}
           >
             <span className="text-sm font-mono text-muted-foreground bg-secondary/80 backdrop-blur-sm px-4 py-1.5 rounded-full border border-border">
               {exp.period}
@@ -116,10 +124,13 @@ function TimelineCard({ exp, index }: { exp: Experience; index: number }) {
       {/* Center dot */}
       <div className="absolute left-4 md:left-1/2 md:-translate-x-1/2 z-10">
         <div
-          className={`size-11 rounded-full border-[3px] border-primary bg-background flex items-center justify-center shadow-lg shadow-primary/20 transition-all duration-500 ease-out ${
-            visible ? "scale-100 rotate-0" : "scale-0 rotate-180"
-          }`}
-          style={{ transitionDelay: `${index * 200}ms` }}
+          className="size-11 rounded-full border-[3px] border-primary bg-background flex items-center justify-center shadow-lg shadow-primary/20 transition-all ease-[cubic-bezier(0.34,1.56,0.64,1)]"
+          style={{
+            transitionDuration: "700ms",
+            transitionDelay: `${baseDelay}ms`,
+            opacity: visible ? 1 : 0,
+            transform: visible ? "scale(1) rotate(0deg)" : "scale(0) rotate(-180deg)",
+          }}
         >
           <Briefcase className="size-4 text-primary" />
         </div>
@@ -129,10 +140,13 @@ function TimelineCard({ exp, index }: { exp: Experience; index: number }) {
       <div className="hidden md:flex w-[calc(50%-28px)] ml-auto">
         {isLeft ? (
           <div
-            className={`flex items-center transition-all duration-500 ease-out ${
-              visible ? "opacity-100" : "opacity-0"
-            }`}
-            style={{ transitionDelay: `${index * 200 + 300}ms` }}
+            className="flex items-center transition-all ease-[cubic-bezier(0.16,1,0.3,1)]"
+            style={{
+              transitionDuration: "700ms",
+              transitionDelay: `${baseDelay + 400}ms`,
+              opacity: visible ? 1 : 0,
+              transform: visible ? "translateY(0)" : "translateY(12px)",
+            }}
           >
             <span className="text-sm font-mono text-muted-foreground bg-secondary/80 backdrop-blur-sm px-4 py-1.5 rounded-full border border-border">
               {exp.period}
@@ -140,14 +154,18 @@ function TimelineCard({ exp, index }: { exp: Experience; index: number }) {
           </div>
         ) : (
           <div
-            className={`transition-all duration-700 ease-out ${
-              visible
-                ? "opacity-100 translate-x-0"
-                : "opacity-0 translate-x-12"
-            }`}
-            style={{ transitionDelay: `${index * 200 + 100}ms` }}
+            className="transition-all ease-[cubic-bezier(0.16,1,0.3,1)]"
+            style={{
+              transitionDuration: "900ms",
+              transitionDelay: `${baseDelay + 150}ms`,
+              opacity: visible ? 1 : 0,
+              transform: visible
+                ? "translateX(0) scale(1)"
+                : "translateX(60px) scale(0.95)",
+              filter: visible ? "blur(0px)" : "blur(6px)",
+            }}
           >
-            <CardContent exp={exp} alignment="left" />
+            <CardContent exp={exp} alignment="left" visible={visible} baseDelay={baseDelay} />
           </div>
         )}
       </div>
@@ -155,14 +173,18 @@ function TimelineCard({ exp, index }: { exp: Experience; index: number }) {
       {/* Mobile: always show card on right of line */}
       <div className="md:hidden w-full pl-16">
         <div
-          className={`transition-all duration-700 ease-out ${
-            visible
-              ? "opacity-100 translate-x-0"
-              : "opacity-0 translate-x-8"
-          }`}
-          style={{ transitionDelay: `${index * 200 + 100}ms` }}
+          className="transition-all ease-[cubic-bezier(0.16,1,0.3,1)]"
+          style={{
+            transitionDuration: "900ms",
+            transitionDelay: `${baseDelay + 150}ms`,
+            opacity: visible ? 1 : 0,
+            transform: visible
+              ? "translateY(0) scale(1)"
+              : "translateY(40px) scale(0.96)",
+            filter: visible ? "blur(0px)" : "blur(4px)",
+          }}
         >
-          <CardContent exp={exp} alignment="left" showPeriod />
+          <CardContent exp={exp} alignment="left" showPeriod visible={visible} baseDelay={baseDelay} />
         </div>
       </div>
     </div>
@@ -173,14 +195,18 @@ function CardContent({
   exp,
   alignment,
   showPeriod,
+  visible,
+  baseDelay,
 }: {
   exp: Experience;
   alignment: "left" | "right";
   showPeriod?: boolean;
+  visible: boolean;
+  baseDelay: number;
 }) {
   return (
     <div
-      className={`max-w-md w-full p-5 rounded-xl border border-border bg-card/80 backdrop-blur-sm shadow-sm hover:shadow-lg hover:border-primary/30 hover:bg-card transition-all duration-300 ${
+      className={`max-w-md w-full p-5 rounded-xl border border-border bg-card/80 backdrop-blur-sm shadow-sm hover:shadow-xl hover:border-primary/30 hover:bg-card hover:-translate-y-0.5 transition-all duration-300 ${
         alignment === "right" ? "md:text-right" : ""
       }`}
     >
@@ -209,7 +235,13 @@ function CardContent({
         {exp.bullets.map((b, i) => (
           <li
             key={i}
-            className="text-sm text-muted-foreground leading-relaxed flex items-start gap-2"
+            className="text-sm text-muted-foreground leading-relaxed flex items-start gap-2 transition-all ease-out"
+            style={{
+              transitionDuration: "600ms",
+              transitionDelay: `${baseDelay + 350 + i * 100}ms`,
+              opacity: visible ? 1 : 0,
+              transform: visible ? "translateY(0)" : "translateY(10px)",
+            }}
           >
             <span className="size-1.5 rounded-full bg-primary/60 flex-shrink-0 mt-1.5" />
             <span className={alignment === "right" ? "md:text-right" : ""}>
@@ -219,9 +251,15 @@ function CardContent({
         ))}
       </ul>
       <div
-        className={`flex flex-wrap gap-1.5 mt-4 ${
+        className={`flex flex-wrap gap-1.5 mt-4 transition-all ease-out ${
           alignment === "right" ? "md:justify-end" : ""
         }`}
+        style={{
+          transitionDuration: "600ms",
+          transitionDelay: `${baseDelay + 350 + exp.bullets.length * 100}ms`,
+          opacity: visible ? 1 : 0,
+          transform: visible ? "translateY(0)" : "translateY(8px)",
+        }}
       >
         {exp.tech.map((t) => (
           <Badge
@@ -250,7 +288,10 @@ export function ExperienceSection() {
 
     if (rect.top < windowHeight && rect.bottom > 0) {
       const scrolled = Math.min(
-        Math.max((windowHeight - rect.top) / (rect.height + windowHeight * 0.5), 0),
+        Math.max(
+          (windowHeight - rect.top) / (rect.height + windowHeight * 0.4),
+          0
+        ),
         1
       );
       setLineHeight(scrolled * 100);
@@ -271,12 +312,15 @@ export function ExperienceSection() {
           {/* Animated timeline line */}
           <div className="absolute left-[18px] md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5 bg-border overflow-hidden rounded-full">
             <div
-              className="w-full bg-gradient-to-b from-primary to-primary/40 rounded-full transition-none"
-              style={{ height: `${lineHeight}%` }}
+              className="w-full bg-gradient-to-b from-primary via-primary/70 to-primary/30 rounded-full"
+              style={{
+                height: `${lineHeight}%`,
+                transition: "height 100ms linear",
+              }}
             />
           </div>
 
-          <div className="flex flex-col gap-16 py-6">
+          <div className="flex flex-col gap-20 py-6">
             {experiences.map((exp, i) => (
               <TimelineCard key={exp.role + exp.company} exp={exp} index={i} />
             ))}
@@ -284,7 +328,13 @@ export function ExperienceSection() {
 
           {/* End dot */}
           <div className="absolute left-[14px] md:left-1/2 md:-translate-x-1/2 bottom-0">
-            <div className="size-3 rounded-full bg-primary/40 ring-4 ring-background" />
+            <div
+              className="size-3 rounded-full bg-primary/40 ring-4 ring-background transition-all duration-700"
+              style={{
+                opacity: lineHeight > 90 ? 1 : 0,
+                transform: lineHeight > 90 ? "scale(1)" : "scale(0)",
+              }}
+            />
           </div>
         </div>
       </div>
