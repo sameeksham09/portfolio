@@ -1,12 +1,12 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useCallback } from "react";
 import {
   SectionWrapper,
   SectionHeading,
 } from "@/components/portfolio/section-wrapper";
 import { Badge } from "@/components/ui/badge";
-import { Briefcase } from "lucide-react";
+import { Briefcase, ExternalLink } from "lucide-react";
 
 interface Experience {
   role: string;
@@ -29,7 +29,14 @@ const experiences: Experience[] = [
       "Delivered an OCR-based bank identification system for international banks, improving first-attempt recognition accuracy by 35%.",
       "Containerized services using Docker and established CI/CD pipelines via GitHub Actions and Jenkins.",
     ],
-    tech: ["Java", "Spring Boot", "Node.js", "Docker", "GitHub Actions", "Jenkins"],
+    tech: [
+      "Java",
+      "Spring Boot",
+      "Node.js",
+      "Docker",
+      "GitHub Actions",
+      "Jenkins",
+    ],
   },
   {
     role: "Automation Intern",
@@ -58,7 +65,7 @@ function TimelineCard({ exp, index }: { exp: Experience; index: number }) {
           observer.unobserve(el);
         }
       },
-      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.2, rootMargin: "0px 0px -60px 0px" }
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -67,20 +74,28 @@ function TimelineCard({ exp, index }: { exp: Experience; index: number }) {
   const isLeft = index % 2 === 0;
 
   return (
-    <div
-      ref={cardRef}
-      className={`relative flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-0 transition-all duration-700 ease-out ${
-        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-      }`}
-      style={{ transitionDelay: `${index * 150}ms` }}
-    >
-      {/* Left side content / spacer */}
-      <div className={`hidden md:flex w-1/2 ${isLeft ? "justify-end pr-10" : "justify-end pr-10"}`}>
+    <div ref={cardRef} className="relative flex items-center">
+      {/* Desktop: left column */}
+      <div className="hidden md:flex w-[calc(50%-28px)] justify-end">
         {isLeft ? (
-          <CardContent exp={exp} alignment="right" />
+          <div
+            className={`transition-all duration-700 ease-out ${
+              visible
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 -translate-x-12"
+            }`}
+            style={{ transitionDelay: `${index * 200 + 100}ms` }}
+          >
+            <CardContent exp={exp} alignment="right" />
+          </div>
         ) : (
-          <div className="flex items-center justify-end h-full">
-            <span className="text-sm font-mono text-muted-foreground bg-secondary px-3 py-1 rounded-full">
+          <div
+            className={`flex items-center justify-end transition-all duration-500 ease-out ${
+              visible ? "opacity-100" : "opacity-0"
+            }`}
+            style={{ transitionDelay: `${index * 200 + 300}ms` }}
+          >
+            <span className="text-sm font-mono text-muted-foreground bg-secondary/80 backdrop-blur-sm px-4 py-1.5 rounded-full border border-border">
               {exp.period}
             </span>
           </div>
@@ -90,29 +105,53 @@ function TimelineCard({ exp, index }: { exp: Experience; index: number }) {
       {/* Center dot */}
       <div className="absolute left-4 md:left-1/2 md:-translate-x-1/2 z-10">
         <div
-          className={`size-10 rounded-full border-[3px] border-primary bg-background flex items-center justify-center shadow-lg shadow-primary/10 transition-all duration-500 ${
-            visible ? "scale-100" : "scale-0"
+          className={`size-11 rounded-full border-[3px] border-primary bg-background flex items-center justify-center shadow-lg shadow-primary/20 transition-all duration-500 ease-out ${
+            visible ? "scale-100 rotate-0" : "scale-0 rotate-180"
           }`}
-          style={{ transitionDelay: `${index * 150 + 200}ms` }}
+          style={{ transitionDelay: `${index * 200}ms` }}
         >
           <Briefcase className="size-4 text-primary" />
         </div>
       </div>
 
-      {/* Right side content / spacer */}
-      <div className={`w-full md:w-1/2 pl-16 md:pl-10 ${!isLeft ? "" : ""}`}>
+      {/* Desktop: right column */}
+      <div className="hidden md:flex w-[calc(50%-28px)] ml-auto">
         {isLeft ? (
-          <div className="hidden md:flex items-center h-full">
-            <span className="text-sm font-mono text-muted-foreground bg-secondary px-3 py-1 rounded-full">
+          <div
+            className={`flex items-center transition-all duration-500 ease-out ${
+              visible ? "opacity-100" : "opacity-0"
+            }`}
+            style={{ transitionDelay: `${index * 200 + 300}ms` }}
+          >
+            <span className="text-sm font-mono text-muted-foreground bg-secondary/80 backdrop-blur-sm px-4 py-1.5 rounded-full border border-border">
               {exp.period}
             </span>
           </div>
         ) : (
-          <CardContent exp={exp} alignment="left" />
+          <div
+            className={`transition-all duration-700 ease-out ${
+              visible
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 translate-x-12"
+            }`}
+            style={{ transitionDelay: `${index * 200 + 100}ms` }}
+          >
+            <CardContent exp={exp} alignment="left" />
+          </div>
         )}
-        {/* Mobile only: always show card content */}
-        <div className="md:hidden">
-          <CardContent exp={exp} alignment="left" />
+      </div>
+
+      {/* Mobile: always show card on right of line */}
+      <div className="md:hidden w-full pl-16">
+        <div
+          className={`transition-all duration-700 ease-out ${
+            visible
+              ? "opacity-100 translate-x-0"
+              : "opacity-0 translate-x-8"
+          }`}
+          style={{ transitionDelay: `${index * 200 + 100}ms` }}
+        >
+          <CardContent exp={exp} alignment="left" showPeriod />
         </div>
       </div>
     </div>
@@ -122,30 +161,37 @@ function TimelineCard({ exp, index }: { exp: Experience; index: number }) {
 function CardContent({
   exp,
   alignment,
+  showPeriod,
 }: {
   exp: Experience;
   alignment: "left" | "right";
+  showPeriod?: boolean;
 }) {
   return (
     <div
-      className={`max-w-md p-5 rounded-xl border border-border bg-card shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-300 ${
+      className={`max-w-md w-full p-5 rounded-xl border border-border bg-card/80 backdrop-blur-sm shadow-sm hover:shadow-lg hover:border-primary/30 hover:bg-card transition-all duration-300 ${
         alignment === "right" ? "md:text-right" : ""
       }`}
     >
-      <span className="text-xs font-mono text-primary md:hidden mb-2 block">
-        {exp.period}
-      </span>
+      {showPeriod && (
+        <span className="text-xs font-mono text-primary mb-2 block">
+          {exp.period}
+        </span>
+      )}
       <h3 className="text-base font-semibold text-foreground">{exp.role}</h3>
       <a
         href={exp.companyUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-sm text-primary hover:underline"
+        className={`inline-flex items-center gap-1 text-sm text-primary hover:underline ${
+          alignment === "right" ? "md:flex-row-reverse" : ""
+        }`}
       >
         {exp.company}
+        <ExternalLink className="size-3" />
       </a>
       <ul
-        className={`mt-3 flex flex-col gap-1.5 ${
+        className={`mt-3 flex flex-col gap-2 ${
           alignment === "right" ? "md:items-end" : ""
         }`}
       >
@@ -154,13 +200,15 @@ function CardContent({
             key={i}
             className="text-sm text-muted-foreground leading-relaxed flex items-start gap-2"
           >
-            <span className="size-1.5 rounded-full bg-primary flex-shrink-0 mt-1.5" />
-            <span className={alignment === "right" ? "md:text-right" : ""}>{b}</span>
+            <span className="size-1.5 rounded-full bg-primary/60 flex-shrink-0 mt-1.5" />
+            <span className={alignment === "right" ? "md:text-right" : ""}>
+              {b}
+            </span>
           </li>
         ))}
       </ul>
       <div
-        className={`flex flex-wrap gap-1.5 mt-3 ${
+        className={`flex flex-wrap gap-1.5 mt-4 ${
           alignment === "right" ? "md:justify-end" : ""
         }`}
       >
@@ -182,39 +230,50 @@ export function ExperienceSection() {
   const lineRef = useRef<HTMLDivElement>(null);
   const [lineHeight, setLineHeight] = useState(0);
 
-  useEffect(() => {
+  const animateLine = useCallback(() => {
     const el = lineRef.current;
     if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setLineHeight(100);
-          observer.unobserve(el);
-        }
-      },
-      { threshold: 0.1 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
+
+    const rect = el.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    if (rect.top < windowHeight && rect.bottom > 0) {
+      const scrolled = Math.min(
+        Math.max((windowHeight - rect.top) / (rect.height + windowHeight * 0.5), 0),
+        1
+      );
+      setLineHeight(scrolled * 100);
+    }
   }, []);
 
+  useEffect(() => {
+    animateLine();
+    window.addEventListener("scroll", animateLine, { passive: true });
+    return () => window.removeEventListener("scroll", animateLine);
+  }, [animateLine]);
+
   return (
-    <SectionWrapper id="experience" label="Work experience">
+    <SectionWrapper id="experience" label="Work Experience">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading>Work Experience</SectionHeading>
         <div ref={lineRef} className="relative">
           {/* Animated timeline line */}
-          <div className="absolute left-4 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5 bg-border">
+          <div className="absolute left-[18px] md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5 bg-border overflow-hidden rounded-full">
             <div
-              className="w-full bg-primary transition-all duration-1000 ease-out"
+              className="w-full bg-gradient-to-b from-primary to-primary/40 rounded-full transition-none"
               style={{ height: `${lineHeight}%` }}
             />
           </div>
 
-          <div className="flex flex-col gap-12 py-4">
+          <div className="flex flex-col gap-16 py-6">
             {experiences.map((exp, i) => (
               <TimelineCard key={exp.role + exp.company} exp={exp} index={i} />
             ))}
+          </div>
+
+          {/* End dot */}
+          <div className="absolute left-[14px] md:left-1/2 md:-translate-x-1/2 bottom-0">
+            <div className="size-3 rounded-full bg-primary/40 ring-4 ring-background" />
           </div>
         </div>
       </div>
