@@ -56,7 +56,7 @@ export function Navbar() {
           href="#hero"
           className="text-lg font-semibold tracking-tight text-foreground hover:text-primary transition-colors"
         >
-          {"AC"}
+          {"SM"}
         </a>
 
         {/* Desktop nav */}

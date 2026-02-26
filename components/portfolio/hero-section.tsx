@@ -18,15 +18,13 @@ export function HeroSection() {
             {"Hello, I'm"}
           </p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-4 text-balance">
-            Alex Chen
+            Sameeksha Mahesh
           </h1>
           <h2 className="text-xl sm:text-2xl text-muted-foreground font-medium mb-6">
             Software Developer
           </h2>
           <p className="text-muted-foreground leading-relaxed max-w-lg mb-8">
-            I build accessible, performant web applications with modern
-            technologies. Passionate about clean code, intuitive user
-            experiences, and solving complex problems through elegant solutions.
+            {"CS Master's student at UC Davis with a 4.0 GPA and production experience as an SDE at Perfios. I build robust, end-to-end systems with Java, Python, Spring Boot, AWS, and Docker \u2014 reducing API response times and improving OCR accuracy in fast-paced environments."}
           </p>
           <div className="flex flex-wrap gap-3">
             <Button asChild size="lg">
@@ -51,7 +49,7 @@ export function HeroSection() {
             <div className="relative size-56 sm:size-64 lg:size-72 rounded-full overflow-hidden border-2 border-border shadow-xl">
               <Image
                 src="/images/profile.jpg"
-                alt="Alex Chen profile photo"
+                alt="Sameeksha Mahesh profile photo"
                 fill
                 className="object-cover"
                 priority

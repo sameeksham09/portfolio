@@ -11,9 +11,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Alex Chen | Software Developer",
+  title: "Sameeksha Mahesh | Software Developer",
   description:
-    "Portfolio of Alex Chen, a Software Developer specializing in building modern web applications with React, Next.js, and TypeScript.",
+    "Portfolio of Sameeksha Mahesh, a Computer Science MS student at UC Davis and Software Developer with experience in Java, Python, Spring Boot, AWS, and Docker.",
   generator: "v0.app",
   icons: {
     icon: [

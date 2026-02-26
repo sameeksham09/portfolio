@@ -18,36 +18,28 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "DevFlow",
+    title: "Intelligent Traffic Violation Detection System",
     description:
-      "A collaborative project management tool for development teams with real-time updates, Kanban boards, sprint tracking, and integrated CI/CD pipeline monitoring.",
-    tech: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind CSS", "Socket.io"],
-    github: "https://github.com",
-    live: "https://example.com",
+      "Real-time traffic violation detection system for helmet non-compliance, signal violations, and mobile phone usage using deep learning and computer vision (YOLOv3/v5/v8 + SORT). Integrated Tesseract OCR for automatic license plate recognition. Achieved 73% mAP50 on validation datasets.",
+    tech: ["Python", "YOLOv8", "OpenCV", "Tesseract OCR", "Streamlit", "MySQL"],
+    github: "https://github.com/sameeksham09",
+    live: "#",
   },
   {
-    title: "CloudVault",
+    title: "Secure Healthcare Portal",
     description:
-      "Secure file storage platform with end-to-end encryption, drag-and-drop uploads, file versioning, and shareable links with granular access controls.",
-    tech: ["React", "Node.js", "AWS S3", "MongoDB", "Express"],
-    github: "https://github.com",
-    live: "https://example.com",
+      "Cloud-based telemedicine platform for encrypted storage and sharing of medical records between patients and doctors. Implemented RSA-2048 encryption, secure key management, and two-factor authentication, achieving 100% data confidentiality across 500+ transactions.",
+    tech: ["Python", "Flask", "REST APIs", "RSA-2048", "2FA"],
+    github: "https://github.com/sameeksham09",
+    live: "#",
   },
   {
-    title: "InsightAI",
+    title: "Fake News Detection System",
     description:
-      "Analytics dashboard powered by machine learning that provides predictive insights, data visualizations, and automated reporting for e-commerce businesses.",
-    tech: ["Python", "Django", "React", "TensorFlow", "D3.js"],
-    github: "https://github.com",
-    live: "https://example.com",
-  },
-  {
-    title: "EchoChat",
-    description:
-      "Real-time messaging application with WebRTC video calling, message threading, file sharing, and AI-powered conversation summaries.",
-    tech: ["Next.js", "WebRTC", "Redis", "Prisma", "OpenAI API"],
-    github: "https://github.com",
-    live: "https://example.com",
+      "Fake news detection system using NLP and ensemble ML models (Logistic Regression, SVM, Random Forest) with a text preprocessing pipeline including tokenization and TF-IDF vectorization, achieving 96% classification accuracy.",
+    tech: ["Python", "Flask", "Scikit-learn", "NLP", "TF-IDF"],
+    github: "https://github.com/sameeksham09",
+    live: "#",
   },
 ];
 

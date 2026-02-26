@@ -10,20 +10,20 @@ import { Mail, Github, Linkedin, ArrowUpRight } from "lucide-react";
 const contactLinks = [
   {
     label: "Email",
-    value: "alex.chen@example.com",
-    href: "mailto:alex.chen@example.com",
+    value: "sammahesh@ucdavis.edu",
+    href: "mailto:sammahesh@ucdavis.edu",
     icon: Mail,
   },
   {
     label: "GitHub",
-    value: "github.com/alexchen",
-    href: "https://github.com",
+    value: "github.com/sameeksham09",
+    href: "https://github.com/sameeksham09",
     icon: Github,
   },
   {
     label: "LinkedIn",
-    value: "linkedin.com/in/alexchen",
-    href: "https://linkedin.com",
+    value: "linkedin.com/in/sameeksham09",
+    href: "https://linkedin.com/in/sameeksham09",
     icon: Linkedin,
   },
 ];
@@ -36,7 +36,7 @@ export function ContactSection() {
         <div className="max-w-2xl">
           <p className="text-muted-foreground leading-relaxed mb-8">
             {
-              "I'm always open to discussing new projects, creative ideas, or opportunities to be part of something great. Whether you have a question or just want to say hello, feel free to reach out."
+              "I'm actively seeking Summer 2026 internship opportunities and always open to discussing projects, creative ideas, or collaborations. Whether you have a question or just want to say hello, feel free to reach out."
             }
           </p>
 
@@ -71,7 +71,7 @@ export function ContactSection() {
 
           <div className="flex justify-center">
             <Button size="lg" asChild>
-              <a href="mailto:alex.chen@example.com">
+              <a href="mailto:sammahesh@ucdavis.edu">
                 <Mail className="size-4" />
                 Say Hello
               </a>

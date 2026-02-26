@@ -36,17 +36,17 @@ export function AboutSection() {
           <div className="md:col-span-3 space-y-4">
             <p className="text-muted-foreground leading-relaxed">
               {
-                "I'm a Software Developer with a background in Computer Science from the University of Washington. My journey in tech started with a curiosity about how things work on the web, and that curiosity has grown into a deep passion for building digital experiences that make a real impact."
+                "I'm a Computer Science Master's student at UC Davis, maintaining a 4.0 GPA, with a Bachelor's in CS from Dayanand Sagar College of Engineering. My passion for software development started with a curiosity about how systems work under the hood, and it has grown into a drive to build production-grade solutions that make a real impact."
               }
             </p>
             <p className="text-muted-foreground leading-relaxed">
               {
-                "Over the years I've worked across the full stack \u2014 from crafting pixel-perfect UIs with React and Next.js to designing robust APIs and database architectures. I'm particularly drawn to the intersection of performance and user experience, where every millisecond matters."
+                "As a Software Development Engineer at Perfios, I redesigned RESTful microservices in Java and Spring Boot, cutting API response times by 20%. I also delivered an OCR-based bank identification system that improved first-attempt recognition accuracy by 35%, and containerized services using Docker with CI/CD pipelines via GitHub Actions and Jenkins."
               }
             </p>
             <p className="text-muted-foreground leading-relaxed">
               {
-                "When I'm not coding, you'll find me exploring open-source projects, writing technical articles, or experimenting with new frameworks and tools to stay on the cutting edge of web development."
+                "I'm drawn to the intersection of backend performance and intelligent systems \u2014 from deep learning-based traffic violation detection to secure healthcare portals with RSA-2048 encryption. I enjoy tackling complex problems with clean, scalable code."
               }
             </p>
           </div>

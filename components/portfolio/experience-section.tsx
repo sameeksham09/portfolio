@@ -17,31 +17,22 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
-    role: "Senior Frontend Engineer",
-    company: "Nextera Technologies",
-    companyUrl: "https://example.com",
-    period: "2024 \u2014 Present",
+    role: "Software Development Engineer",
+    company: "Perfios Software Solutions",
+    companyUrl: "https://www.perfios.com",
+    period: "Apr 2024 \u2014 Sep 2025",
     description:
-      "Lead the frontend architecture for a SaaS platform serving 50k+ users. Build and maintain critical UI components, mentor junior developers, and drive adoption of modern web standards across the engineering org.",
-    tech: ["TypeScript", "React", "Next.js", "Tailwind CSS", "GraphQL"],
+      "Redesigned RESTful microservices in Java and Spring Boot, optimizing database queries and indexing to cut API response time by 20%. Built a full-stack invoicing platform with Node.js and RBAC. Delivered an OCR-based bank identification system improving first-attempt recognition accuracy by 35%. Containerized services using Docker and established CI/CD pipelines via GitHub Actions and Jenkins.",
+    tech: ["Java", "Spring Boot", "Node.js", "Docker", "GitHub Actions", "Jenkins"],
   },
   {
-    role: "Full Stack Developer",
-    company: "Streamline Labs",
-    companyUrl: "https://example.com",
-    period: "2022 \u2014 2024",
+    role: "Automation Intern",
+    company: "Brane Enterprises",
+    companyUrl: "https://www.braneenterprises.com",
+    period: "Jun 2022 \u2014 Jan 2023",
     description:
-      "Developed and shipped multiple product features for a real-time data analytics platform. Designed REST APIs, implemented complex data visualizations, and reduced page load times by 40%.",
-    tech: ["JavaScript", "Node.js", "PostgreSQL", "React", "Docker"],
-  },
-  {
-    role: "Software Engineer Intern",
-    company: "Cascade Solutions",
-    companyUrl: "https://example.com",
-    period: "2021 \u2014 2022",
-    description:
-      "Built internal tools and contributed to the core product codebase. Implemented automated testing pipelines and improved deployment workflows, reducing release cycles from weekly to daily.",
-    tech: ["Python", "Django", "React", "AWS", "CI/CD"],
+      "Automated API workflows using Postman and integrated them into the CI/CD pipeline, applying experiment design and data analysis to increase reliability and reduce manual testing effort by 15%. Optimized client-facing automation tools in Node.js under Agile timelines.",
+    tech: ["Node.js", "Postman", "Git", "CI/CD", "Agile"],
   },
 ];
 

@@ -16,14 +16,25 @@ interface Education {
 
 const education: Education[] = [
   {
-    degree: "B.S. in Computer Science",
-    school: "University of Washington",
-    period: "2018 \u2014 2022",
+    degree: "Master of Science in Computer Science",
+    school: "University of California, Davis",
+    period: "2025 \u2014 Mar 2027",
     details: [
-      "Dean\u2019s List all semesters",
-      "Concentration in Software Engineering",
-      "Capstone: Real-time collaborative code editor",
-      "GPA: 3.85 / 4.0",
+      "GPA: 4.0 / 4.0",
+      "Distributed Database Systems",
+      "Analysis of Software Artifacts",
+      "Seeking Summer 2026 Internship",
+    ],
+  },
+  {
+    degree: "Bachelor of Engineering in Computer Science",
+    school: "Dayanand Sagar College of Engineering",
+    period: "2020 \u2014 2024",
+    details: [
+      "GPA: 3.97 / 4.0",
+      "Data Structures and Algorithms",
+      "Cloud Computing & Big Data",
+      "Object Oriented Programming",
     ],
   },
 ];

@@ -3,9 +3,9 @@
 import { Github, Linkedin, Mail } from "lucide-react";
 
 const socialLinks = [
-  { href: "https://github.com", icon: Github, label: "GitHub" },
-  { href: "https://linkedin.com", icon: Linkedin, label: "LinkedIn" },
-  { href: "mailto:alex.chen@example.com", icon: Mail, label: "Email" },
+  { href: "https://github.com/sameeksham09", icon: Github, label: "GitHub" },
+  { href: "https://linkedin.com/in/sameeksham09", icon: Linkedin, label: "LinkedIn" },
+  { href: "mailto:sammahesh@ucdavis.edu", icon: Mail, label: "Email" },
 ];
 
 export function Footer() {
@@ -13,7 +13,7 @@ export function Footer() {
     <footer className="border-t border-border py-8">
       <div className="mx-auto max-w-6xl px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <p className="text-sm text-muted-foreground">
-          {"Designed & Built by Alex Chen"}
+          {"Designed & Built by Sameeksha Mahesh"}
         </p>
         <div className="flex items-center gap-4">
           {socialLinks.map((link) => (
