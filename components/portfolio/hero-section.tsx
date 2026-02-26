@@ -1,0 +1,65 @@
+"use client";
+
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { ArrowDown, Mail } from "lucide-react";
+
+export function HeroSection() {
+  return (
+    <section
+      id="hero"
+      aria-label="Introduction"
+      className="min-h-screen flex items-center justify-center px-6 pt-16"
+    >
+      <div className="mx-auto max-w-6xl w-full grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+        {/* Text */}
+        <div className="order-2 md:order-1 animate-fade-up">
+          <p className="text-primary font-mono text-sm tracking-wider mb-4">
+            {"Hello, I'm"}
+          </p>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-4 text-balance">
+            Alex Chen
+          </h1>
+          <h2 className="text-xl sm:text-2xl text-muted-foreground font-medium mb-6">
+            Software Developer
+          </h2>
+          <p className="text-muted-foreground leading-relaxed max-w-lg mb-8">
+            I build accessible, performant web applications with modern
+            technologies. Passionate about clean code, intuitive user
+            experiences, and solving complex problems through elegant solutions.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <Button asChild size="lg">
+              <a href="#projects">
+                <ArrowDown className="size-4" />
+                View Projects
+              </a>
+            </Button>
+            <Button variant="outline" size="lg" asChild>
+              <a href="#contact">
+                <Mail className="size-4" />
+                Contact Me
+              </a>
+            </Button>
+          </div>
+        </div>
+
+        {/* Profile image */}
+        <div className="order-1 md:order-2 flex justify-center animate-fade-in" style={{ animationDelay: "0.2s" }}>
+          <div className="relative">
+            <div className="absolute -inset-1 rounded-full bg-primary/20 blur-2xl" />
+            <div className="relative size-56 sm:size-64 lg:size-72 rounded-full overflow-hidden border-2 border-border shadow-xl">
+              <Image
+                src="/images/profile.jpg"
+                alt="Alex Chen profile photo"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
