@@ -22,7 +22,7 @@ const experiences: Experience[] = [
     role: "Software Development Engineer",
     company: "Perfios Software Solutions",
     companyUrl: "https://www.perfios.com",
-    period: "Apr 2024 \u2014 Sep 2025",
+    period: "Jul 2024 \u2014 Sep 2025",
     bullets: [
       "Redesigned RESTful microservices in Java and Spring Boot, optimizing database queries and indexing to cut API response time by 20%.",
       "Built a full-stack invoicing platform with Node.js and role-based access control (RBAC), accelerating data-driven decision making.",
@@ -37,6 +37,17 @@ const experiences: Experience[] = [
       "GitHub Actions",
       "Jenkins",
     ],
+  },
+  {
+    role: "Software Development Engineer Intern",
+    company: "Perfios Software Solutions",
+    companyUrl: "https://www.perfios.com",
+    period: "Apr 2024 \u2014 Jun 2024",
+    bullets: [
+      "Developed and tested microservice endpoints for financial document processing workflows using Java and Spring Boot.",
+      "Assisted in building the OCR-based bank identification pipeline, contributing to data parsing and validation logic.",
+    ],
+    tech: ["Java", "Spring Boot", "REST APIs", "Git"],
   },
   {
     role: "Automation Intern",

@@ -1,82 +1,138 @@
 "use client";
 
+import { useState, useRef, useEffect } from "react";
 import {
   SectionWrapper,
   SectionHeading,
 } from "@/components/portfolio/section-wrapper";
 import { Button } from "@/components/ui/button";
-import { Mail, Github, Linkedin, ArrowUpRight } from "lucide-react";
+import { Mail, Github, Linkedin, Check, Copy, Send } from "lucide-react";
 
-const contactLinks = [
-  {
-    label: "Email",
-    value: "sammahesh@ucdavis.edu",
-    href: "mailto:sammahesh@ucdavis.edu",
-    icon: Mail,
-  },
+const email = "sammahesh@ucdavis.edu";
+
+const socials = [
   {
     label: "GitHub",
-    value: "github.com/sameeksham09",
     href: "https://github.com/sameeksham09",
     icon: Github,
   },
   {
     label: "LinkedIn",
-    value: "linkedin.com/in/sameeksham09",
     href: "https://linkedin.com/in/sameeksham09",
     icon: Linkedin,
+  },
+  {
+    label: "Email",
+    href: "mailto:sammahesh@ucdavis.edu",
+    icon: Mail,
   },
 ];
 
 export function ContactSection() {
+  const [copied, setCopied] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.unobserve(el);
+        }
+      },
+      { threshold: 0.2 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <SectionWrapper id="contact" label="Contact">
-      <div className="mx-auto max-w-6xl px-6">
-        <SectionHeading>Get in Touch</SectionHeading>
-        <div className="max-w-2xl">
-          <p className="text-muted-foreground leading-relaxed mb-8">
-            {
-              "I'm actively seeking Summer 2026 internship opportunities and always open to discussing projects, creative ideas, or collaborations. Whether you have a question or just want to say hello, feel free to reach out."
-            }
-          </p>
+      <div ref={sectionRef} className="mx-auto max-w-3xl px-6 text-center">
+        <div
+          className={`transition-all duration-700 ease-out ${
+            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
+          <SectionHeading>Get in Touch</SectionHeading>
+        </div>
 
-          <div className="flex flex-col gap-4 mb-8">
-            {contactLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target={link.href.startsWith("mailto") ? undefined : "_blank"}
-                rel={
-                  link.href.startsWith("mailto")
-                    ? undefined
-                    : "noopener noreferrer"
-                }
-                className="group flex items-center gap-4 p-4 rounded-xl border border-border bg-card hover:border-primary/30 hover:bg-secondary/50 transition-all duration-300"
-              >
-                <div className="size-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
-                  <link.icon className="size-5 text-primary" />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="text-xs text-muted-foreground mb-0.5">
-                    {link.label}
-                  </p>
-                  <p className="text-sm font-medium text-foreground truncate">
-                    {link.value}
-                  </p>
-                </div>
-                <ArrowUpRight className="size-4 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0" />
-              </a>
-            ))}
-          </div>
+        <p
+          className={`text-muted-foreground leading-relaxed max-w-xl mx-auto mb-10 transition-all duration-700 ease-out delay-100 ${
+            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
+          {"I'm actively seeking Summer 2026 internship opportunities. Have a project idea, a question, or just want to say hello? Drop me a line."}
+        </p>
 
-          <div className="flex justify-center">
-            <Button size="lg" asChild>
-              <a href="mailto:sammahesh@ucdavis.edu">
-                <Mail className="size-4" />
-                Say Hello
-              </a>
-            </Button>
-          </div>
+        {/* Clipboard email snippet */}
+        <div
+          className={`inline-flex items-center gap-3 bg-card border border-border rounded-xl px-5 py-3.5 mb-10 transition-all duration-700 ease-out delay-200 ${
+            visible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-8 scale-95"
+          }`}
+        >
+          <Mail className="size-4 text-primary flex-shrink-0" />
+          <span className="text-sm font-mono text-foreground select-all">
+            {email}
+          </span>
+          <button
+            onClick={handleCopy}
+            className="ml-1 size-8 rounded-lg flex items-center justify-center hover:bg-secondary transition-colors"
+            aria-label={copied ? "Copied" : "Copy email to clipboard"}
+          >
+            {copied ? (
+              <Check className="size-4 text-green-500" />
+            ) : (
+              <Copy className="size-4 text-muted-foreground hover:text-foreground transition-colors" />
+            )}
+          </button>
+        </div>
+
+        {/* Social icon links */}
+        <div
+          className={`flex items-center justify-center gap-4 mb-10 transition-all duration-700 ease-out delay-300 ${
+            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
+          {socials.map((social) => (
+            <a
+              key={social.label}
+              href={social.href}
+              target={social.href.startsWith("mailto") ? undefined : "_blank"}
+              rel={
+                social.href.startsWith("mailto")
+                  ? undefined
+                  : "noopener noreferrer"
+              }
+              className="group size-12 rounded-xl border border-border bg-card flex items-center justify-center hover:border-primary/50 hover:bg-primary/5 hover:scale-110 active:scale-95 transition-all duration-200"
+              aria-label={social.label}
+            >
+              <social.icon className="size-5 text-muted-foreground group-hover:text-primary transition-colors" />
+            </a>
+          ))}
+        </div>
+
+        {/* CTA button */}
+        <div
+          className={`transition-all duration-700 ease-out delay-[400ms] ${
+            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
+          <Button size="lg" className="rounded-xl" asChild>
+            <a href={`mailto:${email}`}>
+              <Send className="size-4" />
+              Say Hello
+            </a>
+          </Button>
         </div>
       </div>
     </SectionWrapper>
