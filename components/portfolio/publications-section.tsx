@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 
 interface Publication {
   title: string;
+  description?: string;
   venue: string;
   venueShort: string;
   link: string;
@@ -19,6 +20,8 @@ const publications: Publication[] = [
   {
     title:
       "Security and Integrity of Healthcare Data in E-Consulting Systems",
+    description:
+      "Explores secure frameworks for protecting patient data integrity and confidentiality in cloud-based e-consulting healthcare systems.",
     venue:
       "International Conference on Computing and Intelligent Information Systems (ICCIIS)",
     venueShort: "ICCIIS",
@@ -27,6 +30,8 @@ const publications: Publication[] = [
   {
     title:
       "A Survey of Deep Learning Object Detection Models for Business Intelligence Applications",
+    description:
+      "Surveys single-stage and two-stage object detection models, analyzing training time complexities and key factors to guide their integration into Business Intelligence workflows.",
     venue:
       "International Journal for Multidisciplinary Research (IJFMR)",
     venueShort: "IJFMR",
@@ -68,6 +73,11 @@ function PublicationCard({
           </h3>
           <ExternalLink className="size-4 flex-shrink-0 mt-1 text-muted-foreground group-hover:text-primary transition-colors duration-300" />
         </div>
+        {pub.description && (
+          <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">
+            {pub.description}
+          </p>
+        )}
         <div className="mt-2 flex items-center gap-3">
           <span className="inline-flex items-center rounded-md bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
             {pub.venueShort}
