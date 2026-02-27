@@ -1,6 +1,8 @@
 "use client";
 
 import { Navbar } from "@/components/portfolio/navbar";
+import { ScrollProgress } from "@/components/portfolio/scroll-progress";
+import { CursorSpotlight } from "@/components/portfolio/cursor-spotlight";
 import { HeroSection } from "@/components/portfolio/hero-section";
 import { AboutSection } from "@/components/portfolio/about-section";
 import { SkillsSection } from "@/components/portfolio/skills-section";
@@ -14,6 +16,8 @@ import { Footer } from "@/components/portfolio/footer";
 export default function Home() {
   return (
     <>
+      <ScrollProgress />
+      <CursorSpotlight />
       <Navbar />
       <main>
         <HeroSection />

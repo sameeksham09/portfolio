@@ -20,6 +20,7 @@ const navLinks = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("#hero");
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -31,6 +32,35 @@ export function Navbar() {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Track active section on scroll
+  useEffect(() => {
+    const sectionIds = navLinks.map((l) => l.href.replace("#", ""));
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => {
+            // prefer the one closest to the top of the viewport
+            return (
+              a.boundingClientRect.top - b.boundingClientRect.top
+            );
+          });
+        if (visible.length > 0) {
+          setActiveSection(`#${visible[0].target.id}`);
+        }
+      },
+      { rootMargin: "-20% 0px -60% 0px", threshold: 0 }
+    );
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -68,9 +98,17 @@ export function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-secondary"
+                className={cn(
+                  "relative px-3 py-2 text-sm transition-colors rounded-md",
+                  activeSection === link.href
+                    ? "text-primary font-medium"
+                    : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+                )}
               >
                 {link.label}
+                {activeSection === link.href && (
+                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] w-4 rounded-full bg-primary" />
+                )}
               </a>
             </li>
           ))}
@@ -115,7 +153,11 @@ export function Navbar() {
             aria-label="Toggle menu"
             aria-expanded={mobileOpen}
           >
-            {mobileOpen ? <X className="size-5" /> : <Menu className="size-5" />}
+            {mobileOpen ? (
+              <X className="size-5" />
+            ) : (
+              <Menu className="size-5" />
+            )}
           </Button>
         </div>
       </nav>
@@ -135,7 +177,12 @@ export function Navbar() {
               <a
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="text-lg text-muted-foreground hover:text-foreground transition-colors"
+                className={cn(
+                  "text-lg transition-colors",
+                  activeSection === link.href
+                    ? "text-primary font-semibold"
+                    : "text-muted-foreground hover:text-foreground"
+                )}
               >
                 {link.label}
               </a>

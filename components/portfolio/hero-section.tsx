@@ -3,8 +3,22 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Mail, Download } from "lucide-react";
+import { useTypewriter } from "@/hooks/use-typewriter";
+
+const roles = [
+  "Software Developer",
+  "Backend Engineer",
+  "ML Enthusiast",
+  "Problem Solver",
+];
 
 export function HeroSection() {
+  const typedRole = useTypewriter(roles, {
+    typeSpeed: 90,
+    deleteSpeed: 55,
+    pauseDuration: 2200,
+  });
+
   return (
     <section
       id="hero"
@@ -20,8 +34,9 @@ export function HeroSection() {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-4 text-balance">
             Sameeksha Mahesh
           </h1>
-          <h2 className="text-xl sm:text-2xl text-muted-foreground font-medium mb-6">
-            Software Developer
+          <h2 className="text-xl sm:text-2xl text-muted-foreground font-medium mb-6 h-8">
+            <span>{typedRole}</span>
+            <span className="inline-block w-[2px] h-6 bg-primary ml-0.5 align-middle animate-pulse" />
           </h2>
           <p className="text-muted-foreground leading-relaxed max-w-lg mb-8">
             {"CS Master's student at UC Davis with a 4.0 GPA and production experience as an SDE at Perfios. I build robust, end-to-end systems with Java, Python, Spring Boot, AWS, and Docker \u2014 reducing API response times and improving OCR accuracy in fast-paced environments."}
@@ -49,7 +64,10 @@ export function HeroSection() {
         </div>
 
         {/* Profile image */}
-        <div className="order-1 md:order-2 flex justify-center animate-fade-in" style={{ animationDelay: "0.2s" }}>
+        <div
+          className="order-1 md:order-2 flex justify-center animate-fade-in"
+          style={{ animationDelay: "0.2s" }}
+        >
           <div className="relative">
             <div className="absolute -inset-1 rounded-full bg-primary/20 blur-2xl" />
             <div className="relative size-56 sm:size-64 lg:size-72 rounded-full overflow-hidden border-2 border-border shadow-xl">
