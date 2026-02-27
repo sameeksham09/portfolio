@@ -1,6 +1,3 @@
-"use client";
-
-import { useEffect, useRef, useState, useCallback } from "react";
 import {
   SectionWrapper,
   SectionHeading,
@@ -28,109 +25,11 @@ const highlights = [
   },
 ];
 
-interface Stat {
-  label: string;
-  value: number;
-  suffix: string;
-  prefix?: string;
-}
-
-const stats: Stat[] = [
-  { label: "GPA at UC Davis", value: 4.0, suffix: "", prefix: "" },
-  { label: "API Speedup", value: 20, suffix: "%", prefix: "" },
-  { label: "OCR Accuracy Boost", value: 35, suffix: "%", prefix: "" },
-  { label: "ML Accuracy", value: 96, suffix: "%", prefix: "" },
-];
-
-function AnimatedCounter({
-  value,
-  suffix,
-  prefix = "",
-  isDecimal,
-}: {
-  value: number;
-  suffix: string;
-  prefix?: string;
-  isDecimal: boolean;
-}) {
-  const [count, setCount] = useState(0);
-  const ref = useRef<HTMLSpanElement>(null);
-  const hasAnimated = useRef(false);
-
-  const animate = useCallback(() => {
-    if (hasAnimated.current) return;
-    hasAnimated.current = true;
-
-    const duration = 1800;
-    const startTime = performance.now();
-
-    const step = (now: number) => {
-      const elapsed = now - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      // ease-out cubic
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(eased * value);
-      if (progress < 1) {
-        requestAnimationFrame(step);
-      } else {
-        setCount(value);
-      }
-    };
-
-    requestAnimationFrame(step);
-  }, [value]);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) animate();
-      },
-      { threshold: 0.5 }
-    );
-
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [animate]);
-
-  return (
-    <span ref={ref} className="tabular-nums">
-      {prefix}
-      {isDecimal ? count.toFixed(1) : Math.round(count)}
-      {suffix}
-    </span>
-  );
-}
-
 export function AboutSection() {
   return (
     <SectionWrapper id="about" label="About me">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading>About Me</SectionHeading>
-
-        {/* Stats strip */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-          {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="text-center p-5 rounded-xl bg-card border border-border/60 hover:border-primary/30 transition-colors"
-            >
-              <div className="text-3xl sm:text-4xl font-bold text-primary mb-1">
-                <AnimatedCounter
-                  value={stat.value}
-                  suffix={stat.suffix}
-                  prefix={stat.prefix}
-                  isDecimal={stat.value % 1 !== 0}
-                />
-              </div>
-              <div className="text-xs sm:text-sm text-muted-foreground">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </div>
 
         <div className="grid md:grid-cols-5 gap-12">
           <div className="md:col-span-3 space-y-4">
