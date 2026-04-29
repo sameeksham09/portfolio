@@ -18,26 +18,26 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Intelligent Traffic Violation Detection System",
+    title: "LocalBite - Community Food Delivery Platform",
     description:
-      "Real-time traffic violation detection system for helmet non-compliance, signal violations, and mobile phone usage using deep learning and computer vision (YOLOv3/v5/v8 + SORT). Integrated Tesseract OCR for automatic license plate recognition. Achieved 73% mAP50 on validation datasets.",
-    tech: ["Python", "YOLOv8", "OpenCV", "Tesseract OCR", "Streamlit", "MySQL"],
+      "Architected a distributed, microservices-based food delivery platform using Python, Flask, and Node.js on Docker and Kubernetes, targeting 10,000-15,000 Davis residents. Features a two-phase dispatch engine with Redis queues and WebSockets, and Stripe payment integration with split payouts.",
+    tech: ["Python", "Flask", "Node.js", "Docker", "Kubernetes", "Redis", "Stripe"],
+    github: "https://github.com/sameeksham09",
+    live: "#",
+  },
+  {
+    title: "Agentic RAG Document QA System",
+    description:
+      "Implemented a conversational RAG agent from scratch with FAISS vector search, sentence-aware chunking, SentenceTransformer embeddings, and sliding-window conversation memory. Features multi-mode answer generation (descriptive, MCQ, True/False) with per-mode prompt guardrails and source citations.",
+    tech: ["Python", "FAISS", "LangChain", "Sentence Transformers", "Streamlit"],
     github: "https://github.com/sameeksham09",
     live: "#",
   },
   {
     title: "Secure Healthcare Portal",
     description:
-      "Cloud-based telemedicine platform for encrypted storage and sharing of medical records between patients and doctors. Implemented RSA-2048 encryption, secure key management, and two-factor authentication, achieving 100% data confidentiality across 500+ transactions.",
-    tech: ["Python", "Flask", "REST APIs", "RSA-2048", "2FA"],
-    github: "https://github.com/sameeksham09",
-    live: "#",
-  },
-  {
-    title: "Fake News Detection System",
-    description:
-      "Fake news detection system using NLP and ensemble ML models (Logistic Regression, SVM, Random Forest) with a text preprocessing pipeline including tokenization and TF-IDF vectorization, achieving 96% classification accuracy.",
-    tech: ["Python", "Flask", "Scikit-learn", "NLP", "TF-IDF"],
+      "Developed a full-stack Node.js healthcare file-sharing portal with SHA-256 cryptographic integrity verification on every file access, bcrypt authentication, MongoDB GridFS storage, session management, and automated Nodemailer alerts across 500+ test transactions.",
+    tech: ["Node.js", "MongoDB", "SHA-256", "bcrypt", "GridFS"],
     github: "https://github.com/sameeksham09",
     live: "#",
   },

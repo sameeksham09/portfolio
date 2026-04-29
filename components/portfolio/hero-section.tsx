@@ -39,7 +39,7 @@ export function HeroSection() {
             <span className="inline-block w-[2px] h-6 bg-primary ml-0.5 align-middle animate-pulse" />
           </h2>
           <p className="text-muted-foreground leading-relaxed max-w-lg mb-8">
-            {"CS Master's student at UC Davis with a 4.0 GPA and production experience as an SDE at Perfios. I build robust, end-to-end systems with Java, Python, Spring Boot, AWS, and Docker \u2014 reducing API response times and improving OCR accuracy in fast-paced environments."}
+            {"I design and ship backend systems, ML pipelines, and cloud-native services that perform at scale. Currently pursuing my MS in Computer Science at UC Davis and seeking Summer 2026 internships."}
           </p>
           <div className="flex flex-wrap gap-3">
             <Button asChild size="lg">

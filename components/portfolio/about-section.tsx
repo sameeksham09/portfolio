@@ -2,26 +2,26 @@ import {
   SectionWrapper,
   SectionHeading,
 } from "@/components/portfolio/section-wrapper";
-import { Code2, Lightbulb, Users } from "lucide-react";
+import { Server, Brain, Cloud } from "lucide-react";
 
 const highlights = [
   {
-    icon: Code2,
-    title: "Clean Code",
+    icon: Server,
+    title: "Backend Systems",
     description:
-      "I believe in writing maintainable, well-documented code that stands the test of time.",
+      "Building robust microservices with Java, Spring Boot, and Node.js that handle production-scale workloads.",
   },
   {
-    icon: Lightbulb,
-    title: "Problem Solver",
+    icon: Brain,
+    title: "ML & AI",
     description:
-      "I enjoy breaking down complex challenges into elegant, efficient solutions.",
+      "From RAG pipelines with FAISS and LangChain to object detection systems -- bringing intelligence to applications.",
   },
   {
-    icon: Users,
-    title: "Team Player",
+    icon: Cloud,
+    title: "Cloud & DevOps",
     description:
-      "Collaborative by nature, I thrive in environments that value open communication.",
+      "Containerizing with Docker/Kubernetes, deploying on AWS, and automating CI/CD pipelines.",
   },
 ];
 
@@ -35,17 +35,17 @@ export function AboutSection() {
           <div className="md:col-span-3 space-y-4">
             <p className="text-muted-foreground leading-relaxed">
               {
-                "I'm a Computer Science Master's student at UC Davis, maintaining a 4.0 GPA, with a Bachelor's in CS from Dayanand Sagar College of Engineering. My passion for software development started with a curiosity about how systems work under the hood, and it has grown into a drive to build production-grade solutions that make a real impact."
+                "I'm a Computer Science Master's student at UC Davis (4.0 GPA), with a Bachelor's from Dayanand Sagar College of Engineering. My passion for software development started with a curiosity about how systems work under the hood, and it has grown into a drive to build production-grade solutions that make a real impact."
               }
             </p>
             <p className="text-muted-foreground leading-relaxed">
               {
-                "As a Software Development Engineer at Perfios, I redesigned RESTful microservices in Java and Spring Boot, cutting API response times by 20%. I also delivered an OCR-based bank identification system that improved first-attempt recognition accuracy by 35%, and containerized services using Docker with CI/CD pipelines via GitHub Actions and Jenkins."
+                "Currently, I'm building LocalBite -- a distributed, microservices-based food delivery platform targeting 10,000+ Davis residents, and an Agentic RAG Document QA System with FAISS vector search and conversational memory. I love tackling complex systems problems end-to-end."
               }
             </p>
             <p className="text-muted-foreground leading-relaxed">
               {
-                "I'm drawn to the intersection of backend performance and intelligent systems \u2014 from deep learning-based traffic violation detection to secure healthcare portals with RSA-2048 encryption. I enjoy tackling complex problems with clean, scalable code."
+                "I'm drawn to the intersection of backend performance and intelligent systems -- from RAG pipelines with LangChain to secure healthcare portals with cryptographic integrity verification. I'm seeking Summer 2026 internship opportunities where I can contribute to impactful engineering challenges."
               }
             </p>
           </div>

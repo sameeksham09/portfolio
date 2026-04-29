@@ -23,7 +23,7 @@ const education: Education[] = [
       "GPA: 4.0 / 4.0",
       "Distributed Database Systems",
       "Analysis of Software Artifacts",
-      "Seeking Summer 2026 Internship",
+      "Software Engineering",
     ],
   },
   {
@@ -33,8 +33,8 @@ const education: Education[] = [
     details: [
       "GPA: 3.97 / 4.0",
       "Data Structures and Algorithms",
-      "Cloud Computing & Big Data",
-      "Object Oriented Programming",
+      "Operating Systems",
+      "Big Data & Cloud Computing",
     ],
   },
 ];

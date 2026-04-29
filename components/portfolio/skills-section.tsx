@@ -20,11 +20,11 @@ const skillCategories: SkillCategory[] = [
   {
     title: "Languages",
     skills: [
-      { name: "Python", icon: "python" },
       { name: "Java", icon: "java" },
+      { name: "C++", icon: "cpp" },
+      { name: "Python", icon: "python" },
       { name: "JavaScript", icon: "javascript" },
-      { name: "Go", icon: "go" },
-      { name: "Perl", icon: "perl" },
+      { name: "SQL", icon: "mysql" },
     ],
   },
   {
@@ -32,7 +32,9 @@ const skillCategories: SkillCategory[] = [
     skills: [
       { name: "Spring Boot", icon: "spring" },
       { name: "Flask", icon: "flask" },
+      { name: "React", icon: "react" },
       { name: "Node.js", icon: "nodejs" },
+      { name: "LangChain", icon: "python" },
       { name: "Elasticsearch", icon: "elasticsearch" },
     ],
   },
@@ -42,6 +44,7 @@ const skillCategories: SkillCategory[] = [
       { name: "MySQL", icon: "mysql" },
       { name: "PostgreSQL", icon: "postgresql" },
       { name: "MongoDB", icon: "mongodb" },
+      { name: "Oracle", icon: "oracle" },
     ],
   },
   {
