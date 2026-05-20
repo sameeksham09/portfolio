@@ -1,11 +1,8 @@
-"use client";
-
 import {
   SectionWrapper,
   SectionHeading,
 } from "@/components/portfolio/section-wrapper";
-import { GraduationCap, Download } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { GraduationCap } from "lucide-react";
 
 interface Education {
   degree: string;
@@ -73,17 +70,6 @@ export function EducationSection() {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Resume download */}
-        <div className="mt-10 flex justify-center">
-          <Button size="lg" asChild>
-            <a href="/Sameeksha-Mahesh-Resume.pdf" download aria-label="Download resume as PDF">
-              <Download className="size-4" />
-              Download Resume
-            </a>
-          </Button>
-        </div>
       </div>
     </SectionWrapper>
   );
