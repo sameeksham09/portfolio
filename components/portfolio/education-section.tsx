@@ -18,23 +18,19 @@ const education: Education[] = [
   {
     degree: "Master of Science in Computer Science",
     school: "University of California, Davis",
-    period: "2025 \u2014 Mar 2027",
+    period: "Sep 2025 — Mar 2027",
     details: [
       "GPA: 4.0 / 4.0",
-      "Distributed Database Systems",
-      "Analysis of Software Artifacts",
-      "Software Engineering",
+      "Machine Learning & Discovery",
+      "Distributed Systems",
     ],
   },
   {
     degree: "Bachelor of Engineering in Computer Science",
     school: "Dayanand Sagar College of Engineering",
-    period: "2020 \u2014 2024",
+    period: "Aug 2020 — Jun 2024",
     details: [
       "GPA: 3.97 / 4.0",
-      "Data Structures and Algorithms",
-      "Operating Systems",
-      "Big Data & Cloud Computing",
     ],
   },
 ];

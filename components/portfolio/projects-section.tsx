@@ -18,26 +18,18 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "LocalBite - Community Food Delivery Platform",
-    description:
-      "Architected a distributed, microservices-based food delivery platform using Python, Flask, and Node.js on Docker and Kubernetes, targeting 10,000-15,000 Davis residents. Features a two-phase dispatch engine with Redis queues and WebSockets, and Stripe payment integration with split payouts.",
-    tech: ["Python", "Flask", "Node.js", "Docker", "Kubernetes", "Redis", "Stripe"],
-    github: "https://github.com/sameeksham09",
-    live: "#",
-  },
-  {
     title: "Agentic RAG Document QA System",
     description:
-      "Implemented a conversational RAG agent from scratch with FAISS vector search, sentence-aware chunking, SentenceTransformer embeddings, and sliding-window conversation memory. Features multi-mode answer generation (descriptive, MCQ, True/False) with per-mode prompt guardrails and source citations.",
-    tech: ["Python", "FAISS", "LangChain", "Sentence Transformers", "Streamlit"],
+      "Orchestrated a multi-step agentic pipeline coordinating chunking, FAISS retrieval, reranking, and LLM generation (Ollama/OpenAI/LoRA) with strict grounding and hallucination guardrails. Engineered two-stage retrieve-and-rerank system (bi-encoder recall + cross-encoder reranking) that eliminated false-positive chunk retrieval, improving relevance scores by ~185% on domain-specific queries.",
+    tech: ["Python", "FAISS", "LangChain", "Ollama", "OpenAI", "Streamlit"],
     github: "https://github.com/sameeksham09",
     live: "#",
   },
   {
-    title: "Secure Healthcare Portal",
+    title: "LocalBite - Community Food Delivery Platform",
     description:
-      "Developed a full-stack Node.js healthcare file-sharing portal with SHA-256 cryptographic integrity verification on every file access, bcrypt authentication, MongoDB GridFS storage, session management, and automated Nodemailer alerts across 500+ test transactions.",
-    tech: ["Node.js", "MongoDB", "SHA-256", "bcrypt", "GridFS"],
+      "Architected a full-stack food delivery platform (React, Spring Boot, Docker/K8s) serving a 1,000+ user market; designed real-time operator dashboard with order tracking, dispatch state, and exception surfacing — cutting perceived commission overhead by 40-55%. Designed a two-phase dispatch engine with Redis queues and WebSockets, cutting average dispatch time by 15%.",
+    tech: ["React", "Spring Boot", "Docker", "Kubernetes", "Redis", "Stripe", "WebSockets"],
     github: "https://github.com/sameeksham09",
     live: "#",
   },

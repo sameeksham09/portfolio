@@ -34,8 +34,18 @@ const skillCategories: SkillCategory[] = [
       { name: "Flask", icon: "flask" },
       { name: "React", icon: "react" },
       { name: "Node.js", icon: "nodejs" },
-      { name: "LangChain", icon: "python" },
       { name: "Elasticsearch", icon: "elasticsearch" },
+      { name: "Streamlit", icon: "python" },
+      { name: "Redis", icon: "redis" },
+    ],
+  },
+  {
+    title: "AI/ML",
+    skills: [
+      { name: "PyTorch", icon: "pytorch" },
+      { name: "TensorFlow", icon: "tensorflow" },
+      { name: "LangChain", icon: "python" },
+      { name: "HuggingFace", icon: "python" },
     ],
   },
   {
@@ -45,6 +55,7 @@ const skillCategories: SkillCategory[] = [
       { name: "PostgreSQL", icon: "postgresql" },
       { name: "MongoDB", icon: "mongodb" },
       { name: "Oracle", icon: "oracle" },
+      { name: "Snowflake", icon: "postgres" },
     ],
   },
   {
@@ -58,6 +69,7 @@ const skillCategories: SkillCategory[] = [
       { name: "GitHub Actions", icon: "githubactions" },
       { name: "Linux", icon: "linux" },
       { name: "Postman", icon: "postman" },
+      { name: "Datadog", icon: "grafana" },
     ],
   },
 ];

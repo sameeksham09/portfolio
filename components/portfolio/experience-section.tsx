@@ -19,21 +19,33 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
+    role: "Teaching Assistant — ECS 140A (Programming Languages)",
+    company: "University of California, Davis",
+    companyUrl: "https://www.ucdavis.edu",
+    period: "Jan 2026 — Mar 2026",
+    bullets: [
+      "Led Java OOP and Haskell discussion sections and office hours for 100+ students, delivering targeted feedback on variables, scoping, exceptions, and debugging.",
+      "Designed an automated code grader in Python that eliminated manual grading for 100+ students, cutting evaluation turnaround from days to minutes and increasing submission iteration rate.",
+    ],
+    tech: ["Java", "Haskell", "Python", "OOP"],
+  },
+  {
     role: "Software Development Engineer",
     company: "Perfios Software Solutions",
     companyUrl: "https://www.perfios.com",
-    period: "Apr 2024 \u2014 Sep 2025",
+    period: "Apr 2024 — Sep 2025",
     bullets: [
-      "Redesigned RESTful microservices in Java and Spring Boot, optimizing database queries and CI/CD pipelines to achieve a 20% reduction in API response times across 5+ production services.",
-      "Launched a full-stack invoicing platform using Node.js with RBAC, enabling 500+ clients to automate reporting workflows and cutting manual data-entry time by 30%.",
-      "Engineered an OCR-based bank identification system for 10+ international banks, boosting first-attempt recognition accuracy by 35% and eliminating manual fallback for 90% of submissions.",
-      "Containerized 8+ microservices using Docker and built CI/CD pipelines via GitHub Actions and Jenkins, cutting release cycle time by 25% and reducing deployment failures by 40%.",
+      "Orchestrated 8+ microservices using Docker and Kubernetes; built end-to-end CI/CD pipelines (GitHub Actions + Jenkins) with staged rollouts, automated rollback, and integration testing, cutting deployment cycle time by 40%.",
+      "Built an intelligent document processing pipeline leveraging Elasticsearch ML-based vector similarity for bank identification, combining OCR text extraction with logo recognition to improve automated match rates from 25% to 65%.",
+      "Shipped a full-stack invoicing platform (Spring Boot, JavaScript) with RBAC, AES-256 field-level encryption, and automated financial report generation; deployed to production, replacing manual reporting for enterprise clients.",
+      "Redesigned RESTful microservices in Java and Spring Boot with caching, response compression, and async request handling, reducing API response times by 20% across core payment services.",
     ],
     tech: [
       "Java",
       "Spring Boot",
-      "Node.js",
       "Docker",
+      "Kubernetes",
+      "Elasticsearch",
       "GitHub Actions",
       "Jenkins",
     ],
@@ -42,10 +54,10 @@ const experiences: Experience[] = [
     role: "Automation Intern",
     company: "Brane Enterprises",
     companyUrl: "https://www.braneenterprises.com",
-    period: "Jun 2022 \u2014 Jan 2023",
+    period: "Jun 2022 — Jan 2023",
     bullets: [
-      "Automated 20+ API test workflows using Postman, integrating them into CI/CD pipeline and reducing manual QA effort by 15% while increasing test coverage by 25%.",
-      "Refactored 3 client-facing automation modules in Node.js following Agile sprint cycles, leveraging Git for version control and improving average task execution speed by 20%.",
+      "Automated 20+ API test workflows in Postman and integrated them into the CI/CD pipeline, reducing manual QA effort by 15% and increasing test coverage by 25%.",
+      "Optimized 3 client-facing automation modules in Node.js across Agile sprint cycles, improving average task execution speed by 20% with Git-managed version control.",
     ],
     tech: ["Node.js", "Postman", "Git", "CI/CD", "Agile"],
   },
