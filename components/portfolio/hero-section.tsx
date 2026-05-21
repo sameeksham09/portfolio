@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Mail, Download } from "lucide-react";
+import { ArrowDown, Mail, FileText } from "lucide-react";
 import { useTypewriter } from "@/hooks/use-typewriter";
 
 const roles = [
@@ -55,8 +55,8 @@ export function HeroSection() {
               </a>
             </Button>
             <Button variant="ghost" size="lg" asChild>
-              <a href="/Sameeksha-Mahesh-Resume.pdf" download>
-                <Download className="size-4" />
+              <a href="#resume">
+                <FileText className="size-4" />
                 Resume
               </a>
             </Button>

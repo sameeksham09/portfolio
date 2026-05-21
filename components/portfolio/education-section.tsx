@@ -1,11 +1,8 @@
-"use client";
-
 import {
   SectionWrapper,
   SectionHeading,
 } from "@/components/portfolio/section-wrapper";
-import { GraduationCap, Download } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { GraduationCap } from "lucide-react";
 
 interface Education {
   degree: string;
@@ -18,23 +15,19 @@ const education: Education[] = [
   {
     degree: "Master of Science in Computer Science",
     school: "University of California, Davis",
-    period: "2025 \u2014 Mar 2027",
+    period: "Sep 2025 — Mar 2027",
     details: [
       "GPA: 4.0 / 4.0",
-      "Distributed Database Systems",
-      "Analysis of Software Artifacts",
-      "Software Engineering",
+      "Machine Learning & Discovery",
+      "Distributed Systems",
     ],
   },
   {
     degree: "Bachelor of Engineering in Computer Science",
     school: "Dayanand Sagar College of Engineering",
-    period: "2020 \u2014 2024",
+    period: "Aug 2020 — Jun 2024",
     details: [
       "GPA: 3.97 / 4.0",
-      "Data Structures and Algorithms",
-      "Operating Systems",
-      "Big Data & Cloud Computing",
     ],
   },
 ];
@@ -77,17 +70,6 @@ export function EducationSection() {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Resume download */}
-        <div className="mt-10 flex justify-center">
-          <Button size="lg" asChild>
-            <a href="/Sameeksha-Mahesh-Resume.pdf" download aria-label="Download resume as PDF">
-              <Download className="size-4" />
-              Download Resume
-            </a>
-          </Button>
-        </div>
       </div>
     </SectionWrapper>
   );
