@@ -98,13 +98,16 @@ export function Navbar() {
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
-                href={link.href}
-                className={cn(
-                  "relative px-3 py-2 text-sm transition-colors rounded-md",
-                  activeSection === link.href
-                    ? "text-primary font-medium"
-                    : "text-muted-foreground hover:text-foreground hover:bg-secondary"
-                )}
+                            href={link.href}  
+              download={link.label === "Resume" ? true : undefined}
+              target={link.label === "Resume" ? "_blank" : undefined}
+              className={cn(
+                "relative px-3 py-2 text-sm transition-colors rounded-md",
+                activeSection === link.href
+                  ? "text-primary font-medium"
+                  : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+              )}
+
               >
                 {link.label}
                 {activeSection === link.href && (
