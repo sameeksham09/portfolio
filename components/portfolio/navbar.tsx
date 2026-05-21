@@ -35,16 +35,20 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Track active section on scroll
   useEffect(() => {
-    const sectionIds = navLinks
-      .filter((l) => l.href.startsWith("#"))
-      .map((l) => l.href.replace("#", ""));
+    const sectionIds = navLinks.map((l) => l.href.replace("#", ""));
 
     const observer = new IntersectionObserver(
       (entries) => {
         const visible = entries
           .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+          .sort((a, b) => {
+            // prefer the one closest to the top of the viewport
+            return (
+              a.boundingClientRect.top - b.boundingClientRect.top
+            );
+          });
         if (visible.length > 0) {
           setActiveSection(`#${visible[0].target.id}`);
         }
@@ -81,7 +85,7 @@ export function Navbar() {
       )}
     >
       <nav className="mx-auto max-w-6xl flex items-center justify-between px-6 h-16">
-        
+        <a
           href="#hero"
           className="flex items-center gap-2 text-lg font-semibold tracking-tight text-foreground hover:text-primary transition-colors"
         >
@@ -93,16 +97,17 @@ export function Navbar() {
         <ul className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => (
             <li key={link.href}>
-              
-                href={link.href}
-                target={link.label === "Resume" ? "_blank" : undefined}
-                rel={link.label === "Resume" ? "noopener noreferrer" : undefined}
-                className={cn(
-                  "relative px-3 py-2 text-sm transition-colors rounded-md",
-                  activeSection === link.href
-                    ? "text-primary font-medium"
-                    : "text-muted-foreground hover:text-foreground hover:bg-secondary"
-                )}
+              <a
+                            href={link.href}  
+              download={link.label === "Resume" ? true : undefined}
+              target={link.label === "Resume" ? "_blank" : undefined}
+              className={cn(
+                "relative px-3 py-2 text-sm transition-colors rounded-md",
+                activeSection === link.href
+                  ? "text-primary font-medium"
+                  : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+              )}
+
               >
                 {link.label}
                 {activeSection === link.href && (
@@ -173,10 +178,8 @@ export function Navbar() {
         <ul className="flex flex-col items-center justify-center gap-6 pt-20">
           {navLinks.map((link) => (
             <li key={link.href}>
-              
+              <a
                 href={link.href}
-                target={link.label === "Resume" ? "_blank" : undefined}
-                rel={link.label === "Resume" ? "noopener noreferrer" : undefined}
                 onClick={() => setMobileOpen(false)}
                 className={cn(
                   "text-lg transition-colors",
