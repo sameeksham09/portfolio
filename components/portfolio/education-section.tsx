@@ -70,6 +70,7 @@ export function EducationSection() {
               </div>
             </div>
           ))}
+        </div>
       </div>
     </SectionWrapper>
   );

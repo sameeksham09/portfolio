@@ -46,7 +46,7 @@ function PublicationCard({
   pub: Publication;
   index: number;
 }) {
-  const { ref, isVisible } = useAnimateOnScroll(0.15);
+  const { ref, isVisible } = useAnimateOnScroll<HTMLAnchorElement>(0.15);
 
   return (
     <a
