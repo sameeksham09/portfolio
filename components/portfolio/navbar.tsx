@@ -14,7 +14,7 @@ const navLinks = [
   { label: "Projects", href: "#projects" },
   { label: "Education", href: "#education" },
   { label: "Publications", href: "#publications" },
-  { label: "Resume", href: "/Sameeksha-Mahesh-Resume.pdf" },
+  { label: "Resume", href: "https://v0-sameeksha-mahesh.vercel.app/Sameeksha-Mahesh-Resume.pdf" },
   { label: "Contact", href: "#contact" },
 ];
 
