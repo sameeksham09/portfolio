@@ -5,47 +5,56 @@ import {
 } from "@/components/portfolio/section-wrapper";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github } from "lucide-react";
+import { Github } from "lucide-react";
 interface Project {
   title: string;
   description: string;
   tech: string[];
   github: string;
-  live: string;
 }
 const projects: Project[] = [
   {
     title: "Agentic RAG Document QA System",
     description:
-      "Built an end-to-end Retrieval-Augmented Generation pipeline from scratch — sentence-aware chunking with overlap, Hybrid BM25 + Dense retrieval with Reciprocal Rank Fusion, and cross-encoder reranking that eliminated false-positive chunk retrieval, raising rerank scores from −9.8 to +8.4. Achieved 100% retrieval precision and 0.75 Token F1 on a 23-question held-out benchmark, with +0.29 F1 improvement over baseline. Exposed full pipeline as a FastAPI REST API with streaming generation, RAGAs-style faithfulness scoring, conversation memory, and LLM-based query rewriting.",
+      "Built an end-to-end Retrieval-Augmented Generation pipeline from scratch — sentence-aware chunking with overlap, Hybrid BM25 + Dense retrieval with Reciprocal Rank Fusion, and cross-encoder reranking that eliminated false-positive chunk retrieval, raising rerank scores from −9.8 to +8.4. Achieved 100% retrieval precision and 0.75 Token F1 on a 23-question held-out benchmark, with +0.29 F1 improvement over baseline.",
     tech: ["Python", "ChromaDB", "BM25", "SentenceTransformers", "CrossEncoder", "LLaMA 3.2", "Ollama", "FastAPI", "Streamlit"],
     github: "https://github.com/sameeksham09",
-    live: "#",
   },
   {
-    title: "LocalBite - Community Food Delivery Platform",
+    title: "LocalBite — Community Food Delivery Platform",
     description:
       "Architected a full-stack food delivery platform (React, Spring Boot, Docker/K8s) serving a 1,000+ user market; designed real-time operator dashboard with order tracking, dispatch state, and exception surfacing — cutting perceived commission overhead by 40-55%. Designed a two-phase dispatch engine with Redis queues and WebSockets, cutting average dispatch time by 15%.",
     tech: ["React", "Spring Boot", "Docker", "Kubernetes", "Redis", "Stripe", "WebSockets"],
     github: "https://github.com/sameeksham09",
-    live: "#",
   },
   {
-  title: "Intelligent Traffic Violation Detection System",
-  description:
-    "Developed a real-time video analytics pipeline to detect helmet violations, signal jumping, and mobile phone usage using deep learning and computer vision (YOLOv3/v5/v8 + SORT). Integrated Tesseract OCR for automatic license plate recognition and built a Streamlit web interface enabling video upload, real-time violation visualization, and MySQL-based record storage. Achieved 73% mAP50 on validation data under varying lighting and traffic conditions.",
-  tech: ["Python", "YOLOv8", "OpenCV", "Tesseract OCR", "Streamlit", "MySQL", "SORT"],
-  github: "https://github.com/sameeksham09",
-  live: "#",
-},
+    title: "Lily — Voice-First Maternal Health Companion",
+    description:
+      "Built a voice-first maternal health AI for obstetric deserts — any pregnant woman can call a phone number (no app needed) to receive empathetic triage grounded in ACOG clinical guidelines. Uses a dual-model AI architecture (Claude Sonnet + OpenBioLLM-70B as clinical validator), a deterministic rules engine for triage decisions, and a real-time doctor dashboard with 20-minute SLA enforcement. Built for HackDavis 2026.",
+    tech: ["Python", "FastAPI", "Claude Sonnet", "Twilio", "ElevenLabs", "Pinecone", "ChromaDB", "PostgreSQL", "React"],
+    github: "https://github.com/localbite-davis/Lily",
+  },
   {
-  title: "Secure Healthcare Portal",
-  description:
-    "Developed a full-stack Node.js healthcare file-sharing portal with SHA-256 cryptographic integrity verification on every file access — flagging tampering in real time — alongside bcrypt authentication, MongoDB GridFS storage, session management, and automated Nodemailer alerts across 500+ test transactions.",
-  tech: ["Node.js", "MongoDB", "GridFS", "bcrypt", "SHA-256", "Nodemailer", "Express"],
-  github: "https://github.com/sameeksham09",
-  live: "#",
-},
+    title: "Intelligent Traffic Violation Detection System",
+    description:
+      "Developed a real-time video analytics pipeline to detect helmet violations, signal jumping, and mobile phone usage using deep learning and computer vision (YOLOv3/v5/v8 + SORT). Integrated Tesseract OCR for automatic license plate recognition and built a Streamlit web interface enabling video upload, real-time violation visualization, and MySQL-based record storage. Achieved 73% mAP50 on validation data under varying lighting and traffic conditions.",
+    tech: ["Python", "YOLOv8", "OpenCV", "Tesseract OCR", "Streamlit", "MySQL", "SORT"],
+    github: "https://github.com/sameeksham09",
+  },
+  {
+    title: "Secure Healthcare Portal",
+    description:
+      "Developed a full-stack Node.js healthcare file-sharing portal with SHA-256 cryptographic integrity verification on every file access — flagging tampering in real time — alongside bcrypt authentication, MongoDB GridFS storage, session management, and automated Nodemailer alerts across 500+ test transactions.",
+    tech: ["Node.js", "MongoDB", "GridFS", "bcrypt", "SHA-256", "Nodemailer", "Express"],
+    github: "https://github.com/sameeksham09",
+  },
+  {
+    title: "Fake News Detection",
+    description:
+      "Built a machine learning web application combining NLP preprocessing, TF-IDF vectorization, and ML classifiers (Logistic Regression, SVM) to evaluate the credibility of news articles. Includes confusion matrix analysis and cross-model accuracy comparison to select the best performing model for final predictions.",
+    tech: ["Python", "Scikit-learn", "TF-IDF", "NLP", "Flask", "HTML/CSS"],
+    github: "https://github.com/sameeksham09/Fake-News-Detection",
+  },
 ];
 export function ProjectsSection() {
   return (
@@ -85,17 +94,6 @@ export function ProjectsSection() {
                   >
                     <Github className="size-4" />
                     Code
-                  </a>
-                </Button>
-                <Button variant="outline" size="sm" asChild>
-                  
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`View ${project.title} live demo`}
-                  >
-                    <ExternalLink className="size-4" />
-                    Live Demo
                   </a>
                 </Button>
               </div>
