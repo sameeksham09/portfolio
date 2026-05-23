@@ -17,8 +17,8 @@ const projects: Project[] = [
   {
     title: "Agentic RAG Document QA System",
     description:
-      "Orchestrated a multi-step agentic pipeline coordinating chunking, FAISS retrieval, reranking, and LLM generation (Ollama/OpenAI/LoRA) with strict grounding and hallucination guardrails. Engineered two-stage retrieve-and-rerank system (bi-encoder recall + cross-encoder reranking) that eliminated false-positive chunk retrieval, improving relevance scores by ~185% on domain-specific queries.",
-    tech: ["Python", "FAISS", "LangChain", "Ollama", "OpenAI", "Streamlit"],
+      "Built an end-to-end Retrieval-Augmented Generation pipeline from scratch — sentence-aware chunking with overlap, Hybrid BM25 + Dense retrieval with Reciprocal Rank Fusion, and cross-encoder reranking that eliminated false-positive chunk retrieval, raising rerank scores from −9.8 to +8.4. Achieved 100% retrieval precision and 0.75 Token F1 on a 23-question held-out benchmark, with +0.29 F1 improvement over baseline. Exposed full pipeline as a FastAPI REST API with streaming generation, RAGAs-style faithfulness scoring, conversation memory, and LLM-based query rewriting.",
+    tech: ["Python", "ChromaDB", "BM25", "SentenceTransformers", "CrossEncoder", "LLaMA 3.2", "Ollama", "FastAPI", "Streamlit"],
     github: "https://github.com/sameeksham09",
     live: "#",
   },
@@ -30,6 +30,22 @@ const projects: Project[] = [
     github: "https://github.com/sameeksham09",
     live: "#",
   },
+  {
+  title: "Intelligent Traffic Violation Detection System",
+  description:
+    "Developed a real-time video analytics pipeline to detect helmet violations, signal jumping, and mobile phone usage using deep learning and computer vision (YOLOv3/v5/v8 + SORT). Integrated Tesseract OCR for automatic license plate recognition and built a Streamlit web interface enabling video upload, real-time violation visualization, and MySQL-based record storage. Achieved 73% mAP50 on validation data under varying lighting and traffic conditions.",
+  tech: ["Python", "YOLOv8", "OpenCV", "Tesseract OCR", "Streamlit", "MySQL", "SORT"],
+  github: "https://github.com/sameeksham09",
+  live: "#",
+},
+  {
+  title: "Secure Healthcare Portal",
+  description:
+    "Developed a full-stack Node.js healthcare file-sharing portal with SHA-256 cryptographic integrity verification on every file access — flagging tampering in real time — alongside bcrypt authentication, MongoDB GridFS storage, session management, and automated Nodemailer alerts across 500+ test transactions.",
+  tech: ["Node.js", "MongoDB", "GridFS", "bcrypt", "SHA-256", "Nodemailer", "Express"],
+  github: "https://github.com/sameeksham09",
+  live: "#",
+},
 ];
 export function ProjectsSection() {
   return (
