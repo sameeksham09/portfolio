@@ -16,6 +16,13 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "Real-Time Fraud Detection Feature Store",
+    description:
+      "Designed and built a real-time feature-store pipeline with Kafka ingestion, Spark (PySpark) Structured Streaming computing 5-minute tumbling-window aggregates, and a dual online (Redis) / offline (MinIO/S3 Parquet) feature-store split, orchestrated via Docker Compose across 5+ containerized services. Built a FastAPI scoring service reading windowed features from Redis for sub-second predictions, with an XGBoost classifier trained and version-tracked via MLflow.",
+    tech: ["Kafka", "PySpark", "Redis", "MinIO/S3", "Docker Compose", "FastAPI", "XGBoost", "MLflow"],
+    github: "https://github.com/sameeksham09/fraud-feature-store",
+  },
+  {
     title: "Agentic RAG Document QA System",
     description:
       "Built an end-to-end Retrieval-Augmented Generation pipeline from scratch — sentence-aware chunking with overlap, Hybrid BM25 + Dense retrieval with Reciprocal Rank Fusion, and cross-encoder reranking that eliminated false-positive chunk retrieval, raising rerank scores from -9.8 to +8.4. Achieved 100% retrieval precision and 0.75 Token F1 on a 23-question held-out benchmark, with +0.29 F1 improvement over baseline.",
