@@ -18,6 +18,14 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "Real-Time Fraud Detection Feature Store",
+    description:
+      "Built an end-to-end ML pipeline for real-time credit card fraud detection using Kafka for streaming transactions, Spark Structured Streaming for windowed aggregations, and a dual online/offline feature store (Redis for live serving, MinIO/S3 for historical training). Integrated XGBoost model served via FastAPI with sub-100ms latency and Feast for point-in-time-correct training data.",
+    tech: ["Python", "Kafka", "Spark", "Redis", "XGBoost", "Feast", "FastAPI", "MinIO"],
+    github: "https://github.com/sameeksham09/fraud-feature-store",
+    live: "#",
+  },
+  {
     title: "Agentic RAG Document QA System",
     description:
       "Orchestrated a multi-step agentic pipeline coordinating chunking, FAISS retrieval, reranking, and LLM generation (Ollama/OpenAI/LoRA) with strict grounding and hallucination guardrails. Engineered two-stage retrieve-and-rerank system (bi-encoder recall + cross-encoder reranking) that eliminated false-positive chunk retrieval, improving relevance scores by ~185% on domain-specific queries.",
