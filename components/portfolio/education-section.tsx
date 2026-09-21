@@ -15,11 +15,12 @@ const education: Education[] = [
   {
     degree: "Master of Science in Computer Science",
     school: "University of California, Davis",
-    period: "Sep 2025 — Mar 2027",
+    period: "Sep 2025 — Jun 2027",
     details: [
       "GPA: 4.0 / 4.0",
-      "Machine Learning & Discovery",
-      "Distributed Systems",
+      "Design & Analysis of Algorithms",
+      "Distributed Database Systems",
+      "Machine Learning",
     ],
   },
   {

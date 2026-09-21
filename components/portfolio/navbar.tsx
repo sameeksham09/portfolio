@@ -14,6 +14,7 @@ const navLinks = [
   { label: "Projects", href: "#projects" },
   { label: "Education", href: "#education" },
   { label: "Publications", href: "#publications" },
+  { label: "Resume", href: "/Sameeksha-Mahesh-Resume.pdf" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -97,16 +98,14 @@ export function Navbar() {
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
-                            href={link.href}  
-              download={link.label === "Resume" ? true : undefined}
-              target={link.label === "Resume" ? "_blank" : undefined}
-              className={cn(
-                "relative px-3 py-2 text-sm transition-colors rounded-md",
-                activeSection === link.href
-                  ? "text-primary font-medium"
-                  : "text-muted-foreground hover:text-foreground hover:bg-secondary"
-              )}
-
+                  href={link.label === "Resume" ? "/Sameeksha-Mahesh-Resume.pdf?v=4" : link.href}
+                  download={link.label === "Resume" ? "Sameeksha-Mahesh-Resume.pdf" : undefined}
+                  className={cn(
+                  "relative px-3 py-2 text-sm transition-colors rounded-md",
+                  activeSection === link.href
+                    ? "text-primary font-medium"
+                    : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+                )}
               >
                 {link.label}
                 {activeSection === link.href && (
@@ -178,8 +177,9 @@ export function Navbar() {
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
+                  href={link.label === "Resume" ? "/Sameeksha-Mahesh-Resume.pdf?v=4" : link.href}
+                  download={link.label === "Resume" ? "Sameeksha-Mahesh-Resume.pdf" : undefined}
+                  onClick={() => setMobileOpen(false)}
                 className={cn(
                   "text-lg transition-colors",
                   activeSection === link.href
