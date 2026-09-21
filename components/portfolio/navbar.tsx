@@ -98,7 +98,7 @@ export function Navbar() {
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
-                  href={link.label === "Resume" ? "/Sameeksha-Mahesh-Resume.pdf?v=2" : link.href}
+                  href={link.label === "Resume" ? "/Sameeksha-Mahesh-Resume.pdf?v=3" : link.href}
                   download={link.label === "Resume" ? "Sameeksha-Mahesh-Resume.pdf" : undefined}
                   className={cn(
                   "relative px-3 py-2 text-sm transition-colors rounded-md",
@@ -177,7 +177,7 @@ export function Navbar() {
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
-                  href={link.label === "Resume" ? "/Sameeksha-Mahesh-Resume.pdf?v=2" : link.href}
+                  href={link.label === "Resume" ? "/Sameeksha-Mahesh-Resume.pdf?v=3" : link.href}
                   download={link.label === "Resume" ? "Sameeksha-Mahesh-Resume.pdf" : undefined}
                   onClick={() => setMobileOpen(false)}
                 className={cn(
