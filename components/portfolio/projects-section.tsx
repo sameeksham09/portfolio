@@ -20,17 +20,17 @@ const projects: Project[] = [
   {
     title: "Real-Time Fraud Detection Platform",
     description:
-      "Engineered a distributed fraud detection service with Apache Kafka ingesting continuous transaction streams into Spark Structured Streaming. Computed derived state into dual online Redis and durable offline storage, serving sub-second predictions through FastAPI with MLflow model tracking and 5+ independently deployable containerized services.",
+      "Engineered a distributed, scalable fraud detection service with Apache Kafka ingesting continuous transaction streams into Spark (PySpark) Structured Streaming, computing derived state into dual online Redis and durable offline storage so live results stay consistent with batch computations. Served sub-second predictions through FastAPI with MLflow model tracking and 5+ independently deployable containerized services with documented data contracts.",
     tech: ["Python", "Kafka", "PySpark", "Redis", "MLflow", "FastAPI", "Docker"],
     github: "https://github.com/sameeksham09/fraud-feature-store",
     live: "#",
   },
   {
-    title: "Agentic RAG Document QA System",
+    title: "Agentic Document QA System",
     description:
-      "Orchestrated a multi-step agentic pipeline coordinating chunking, FAISS retrieval, reranking, and LLM generation (Ollama/OpenAI/LoRA) with strict grounding and hallucination guardrails. Engineered two-stage retrieve-and-rerank system (bi-encoder recall + cross-encoder reranking) that eliminated false-positive chunk retrieval, improving relevance scores by ~185% on domain-specific queries.",
-    tech: ["Python", "FAISS", "LangChain", "Ollama", "OpenAI", "Streamlit"],
-    github: "https://github.com/sameeksham09",
+      "Built a Python document QA pipeline with hybrid BM25 and semantic retrieval over a vector index, two-stage reranking, LangChain orchestration, and a streaming FastAPI REST API. Designed a held-out evaluation harness with automated metrics and audit logging that improved answer Token F1 from 0.44 to 0.73.",
+    tech: ["Python", "BM25", "LangChain", "FastAPI", "Vector Embeddings", "RAG"],
+    github: "https://github.com/sameeksham09/GenAI-Document-Reader",
     live: "#",
   },
   {
@@ -39,14 +39,6 @@ const projects: Project[] = [
       "Built the frontend, backend, and database on a cross-functional team for a platform serving 1,000+ users. Delivered a React client over a Python/FastAPI backend with versioned REST APIs, migration-safe PostgreSQL schema, JWT authentication, and role-based access across three user roles.",
     tech: ["React", "FastAPI", "Python", "PostgreSQL", "JWT", "REST APIs"],
     github: "https://github.com/localbite-davis/localbite",
-    live: "#",
-  },
-  {
-    title: "Agentic Document QA System",
-    description:
-      "Built a Python document QA pipeline with hybrid BM25 and semantic retrieval, vector indexing, two-stage reranking, LangChain orchestration, and a streaming FastAPI REST API. Designed an evaluation harness that improved answer Token F1 from 0.44 to 0.73 with held-out references, automated metrics, and audit logging.",
-    tech: ["Python", "BM25", "LangChain", "FastAPI", "Vector Embeddings", "RAG"],
-    github: "https://github.com/sameeksham09/GenAI-Document-Reader",
     live: "#",
   },
 ];

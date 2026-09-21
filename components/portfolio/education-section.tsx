@@ -18,8 +18,9 @@ const education: Education[] = [
     period: "Sep 2025 — Jun 2027",
     details: [
       "GPA: 4.0 / 4.0",
-      "Machine Learning & Discovery",
-      "Distributed Systems",
+      "Design & Analysis of Algorithms",
+      "Distributed Database Systems",
+      "Machine Learning",
     ],
   },
   {

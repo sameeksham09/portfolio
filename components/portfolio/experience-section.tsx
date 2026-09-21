@@ -56,10 +56,9 @@ const experiences: Experience[] = [
     companyUrl: "https://www.braneenterprises.com",
     period: "Jun 2022 — Jan 2023",
     bullets: [
-      "Automated 20+ API test workflows in Postman and integrated them into the CI/CD pipeline, reducing manual QA effort by 15% and increasing test coverage by 25%.",
-      "Optimized 3 client-facing automation modules in Node.js across Agile sprint cycles, improving average task execution speed by 20% with Git-managed version control.",
+      "Wrote 20+ automated integration and regression tests in Postman that validated correctness end to end, increasing test coverage by 25%, and integrated them into the CI pipeline.",
     ],
-    tech: ["Node.js", "Postman", "Git", "CI/CD", "Agile"],
+    tech: ["Postman", "CI/CD", "Git"],
   },
 ];
 
