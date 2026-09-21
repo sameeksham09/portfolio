@@ -83,7 +83,6 @@ const skillCategories: SkillCategory[] = [
     skills: [
       { name: "MySQL", icon: "mysql" },
       { name: "PostgreSQL", icon: "postgresql" },
-      { name: "MySQL", icon: "mysql" },
       { name: "MongoDB", icon: "mongodb" },
       { name: "ChromaDB", icon: "python" },
       { name: "Redis", icon: "redis" },
