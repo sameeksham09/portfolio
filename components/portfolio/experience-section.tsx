@@ -19,26 +19,26 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
-    role: "Teaching Assistant — ECS 140A (Programming Languages)",
-    company: "University of California, Davis",
-    companyUrl: "https://www.ucdavis.edu",
-    period: "Jan 2026 — Mar 2026",
+    role: "AI Engineer Intern",
+    company: "Health Tequity",
+    companyUrl: "#",
+    period: "Jul 2026 — Present",
     bullets: [
-      "Led Java OOP and Haskell discussion sections and office hours for 100+ students, delivering targeted feedback on variables, scoping, exceptions, and debugging.",
-      "Designed an automated code grader in Python that eliminated manual grading for 100+ students, cutting evaluation turnaround from days to minutes and increasing submission iteration rate.",
+      "Owned the full development cycle for a feature across a TypeScript frontend and Java/Spring Boot backend, from design and build through deployment and operation, with zero regressions to existing workflows.",
+      "Integrated a third-party validation service to standardize incoming records against an authoritative reference and modeled the data against a regulated industry standard.",
     ],
-    tech: ["Java", "Haskell", "Python", "OOP"],
+    tech: ["TypeScript", "Java", "Spring Boot", "REST APIs"],
   },
   {
-    role: "Software Development Engineer",
-    company: "Perfios Software Solutions",
+    role: "Software Engineer (Financial Technology)",
+    company: "Perfios Software Solutions Pvt. Ltd.",
     companyUrl: "https://www.perfios.com",
     period: "Apr 2024 — Sep 2025",
     bullets: [
-      "Orchestrated 8+ microservices using Docker and Kubernetes; built end-to-end CI/CD pipelines (GitHub Actions + Jenkins) with staged rollouts, automated rollback, and integration testing, cutting deployment cycle time by 40%.",
-      "Built an intelligent document processing pipeline leveraging Elasticsearch ML-based vector similarity for bank identification, combining OCR text extraction with logo recognition to improve automated match rates from 25% to 65%.",
-      "Shipped a full-stack invoicing platform (Spring Boot, JavaScript) with RBAC, AES-256 field-level encryption, and automated financial report generation; deployed to production, replacing manual reporting for enterprise clients.",
-      "Redesigned RESTful microservices in Java and Spring Boot with caching, response compression, and async request handling, reducing API response times by 20% across core payment services.",
+      "Partnered with enterprise clients to design, build, and roll out a full-stack application into production with a Java/Spring Boot backend, RBAC, OAuth2/JWT authentication, and AES-256 field-level encryption.",
+      "Optimized a complex production workflow by profiling hot paths and redesigning caching and asynchronous request handling, cutting REST API response times by 20% across 5+ integrated services under live customer load.",
+      "Built and operated 8+ containerized services in a distributed microservices architecture with Docker, Kubernetes, and automated CI/CD in two-week Agile sprints, reducing deployment failures by 40%.",
+      "Raised automated document-match accuracy from 25% to 65% by analyzing pipeline failures against expected results and rebuilding it over inconsistent real-world data.",
     ],
     tech: [
       "Java",

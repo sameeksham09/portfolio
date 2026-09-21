@@ -21,10 +21,13 @@ const skillCategories: SkillCategory[] = [
     title: "Languages",
     skills: [
       { name: "Java", icon: "java" },
-      { name: "C++", icon: "cpp" },
       { name: "Python", icon: "python" },
+      { name: "C", icon: "cpp" },
+      { name: "C++", icon: "cpp" },
       { name: "SQL", icon: "mysql" },
+      { name: "TypeScript", icon: "typescript" },
       { name: "JavaScript", icon: "javascript" },
+      { name: "Perl", icon: "perl" },
     ],
   },
   {
@@ -45,13 +48,15 @@ const skillCategories: SkillCategory[] = [
   {
     title: "AI/ML",
     skills: [
-      { name: "LLMs", icon: "pytorch" },
-      { name: "Agentic AI", icon: "python" },
-      { name: "HuggingFace", icon: "python" },
+      { name: "LLM APIs", icon: "python" },
       { name: "RAG Pipelines", icon: "python" },
       { name: "LangChain", icon: "python" },
-      { name: "FAISS", icon: "python" },
+      { name: "XGBoost", icon: "python" },
+      { name: "MLflow", icon: "python" },
       { name: "TensorFlow", icon: "tensorflow" },
+      { name: "Vector Embeddings", icon: "python" },
+      { name: "Feast", icon: "python" },
+      { name: "Hugging Face", icon: "python" },
     ],
   },
   {

@@ -18,10 +18,10 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Real-Time Fraud Detection Feature Store",
+    title: "Real-Time Fraud Detection Platform",
     description:
-      "Built an end-to-end ML pipeline for real-time credit card fraud detection using Kafka for streaming transactions, Spark Structured Streaming for windowed aggregations, and a dual online/offline feature store (Redis for live serving, MinIO/S3 for historical training). Integrated XGBoost model served via FastAPI with sub-100ms latency and Feast for point-in-time-correct training data.",
-    tech: ["Python", "Kafka", "Spark", "Redis", "XGBoost", "Feast", "FastAPI", "MinIO"],
+      "Engineered a distributed fraud detection service with Apache Kafka ingesting continuous transaction streams into Spark Structured Streaming. Computed derived state into dual online Redis and durable offline storage, serving sub-second predictions through FastAPI with MLflow model tracking and 5+ independently deployable containerized services.",
+    tech: ["Python", "Kafka", "PySpark", "Redis", "MLflow", "FastAPI", "Docker"],
     github: "https://github.com/sameeksham09/fraud-feature-store",
     live: "#",
   },
@@ -34,11 +34,19 @@ const projects: Project[] = [
     live: "#",
   },
   {
-    title: "LocalBite - Community Food Delivery Platform",
+    title: "LocalBite — Full-Stack Web Application",
     description:
-      "Architected a full-stack food delivery platform (React, Spring Boot, Docker/K8s) serving a 1,000+ user market; designed real-time operator dashboard with order tracking, dispatch state, and exception surfacing — cutting perceived commission overhead by 40-55%. Designed a two-phase dispatch engine with Redis queues and WebSockets, cutting average dispatch time by 15%.",
-    tech: ["React", "Spring Boot", "Docker", "Kubernetes", "Redis", "Stripe", "WebSockets"],
-    github: "https://github.com/sameeksham09",
+      "Built the frontend, backend, and database on a cross-functional team for a platform serving 1,000+ users. Delivered a React client over a Python/FastAPI backend with versioned REST APIs, migration-safe PostgreSQL schema, JWT authentication, and role-based access across three user roles.",
+    tech: ["React", "FastAPI", "Python", "PostgreSQL", "JWT", "REST APIs"],
+    github: "https://github.com/localbite-davis/localbite",
+    live: "#",
+  },
+  {
+    title: "Agentic Document QA System",
+    description:
+      "Built a Python document QA pipeline with hybrid BM25 and semantic retrieval, vector indexing, two-stage reranking, LangChain orchestration, and a streaming FastAPI REST API. Designed an evaluation harness that improved answer Token F1 from 0.44 to 0.73 with held-out references, automated metrics, and audit logging.",
+    tech: ["Python", "BM25", "LangChain", "FastAPI", "Vector Embeddings", "RAG"],
+    github: "https://github.com/sameeksham09/GenAI-Document-Reader",
     live: "#",
   },
 ];
