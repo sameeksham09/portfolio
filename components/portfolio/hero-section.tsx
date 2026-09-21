@@ -55,7 +55,7 @@ export function HeroSection() {
               </a>
             </Button>
             <Button variant="ghost" size="lg" asChild>
-              <a href="/Sameeksha-Mahesh-Resume.pdf" download>
+              <a href="/Sameeksha-Mahesh-Resume.pdf?v=2" download="Sameeksha-Mahesh-Resume.pdf">
                 <FileText className="size-4" />
                 Resume
               </a>
